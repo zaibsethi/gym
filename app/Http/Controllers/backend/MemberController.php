@@ -6,13 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Member\CreateMemberRequest;
 use App\Http\Requests\Member\UpdateMemberRequest;
 use App\Models\Employee;
-
-//use App\Models\Expense;
 use App\Models\Member;
-
-//use App\Models\Move;
 use App\Models\Package;
-use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -82,7 +77,7 @@ class MemberController extends Controller
 
     public function memberList()
     {
-//        begin: for moving data one table to other
+//       // begin: for moving data one table to other
 //        Move::query()
 //            ->where('id','!=','0')
 //            ->each(function ($oldPost) {
@@ -95,41 +90,16 @@ class MemberController extends Controller
         //        end: for moving data one table to other
 
 
-//        $memberData = DB::table("members")->paginate(100);
-//        $memberData = DB::table("members")->select('*')->cursor();
-//        $memberData = Member::select(['id'])->get();//
-        //        $memberData = Member::all();
-//        $packageData = Package::all();
-
-//        $memberData =Member::select(['id','member_name','member_phone','member_package'])->limit(100)->get();
-
-//               Cache::forever('mambers',Member::all());
-//               Cache::put('mambers',$memberData = Member::all() );
-
-
-//        $memberData = Member::where('gym_id', Auth::user()->gym_id)->get();
         $memberData = Member::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
 
 
-//                       if(Cache::missing('mambers')){
-//                           Cache::put('mambers',Member::select(['id','member_name','member_phone'])->get(),now()->addSecond(20));
-//                           $memberData = Cache::get('mambers');
-//                       }else{
-//                           $memberData = Cache::get('mambers');
-//                       }
+        if (Cache::missing('mambers')) {
+            Cache::put('mambers', Member::select(['id', 'member_name', 'member_phone'])->get(), now()->addSecond(20));
+            $memberData = Cache::get('mambers');
+        } else {
+            $memberData = Cache::get('mambers');
+        }
 
-
-////           echo    Cache::get('mambers');
-//        $memberData = Cache::remember('members',600,  function () {
-////            return DB::table('members')->get();
-////         return Member::select(['id','member_name','member_phone','member_package'])->get();
-//            return Member::select(['id','member_name','member_phone','member_package'])->get();
-//
-////                return Member::where('id','>', '0')->get();
-//
-//
-//
-//        });
         return view('backend.member.member-list', compact('memberData'));
     }
 
@@ -168,9 +138,6 @@ class MemberController extends Controller
 //               end: unlink old image
 
             }
-//            $memberData['member_joining_date'] = Carbon::createFromFormat('m/d/Y', $request->member_joining_date)->format('Y-m-d');
-//            $memberData['member_fee_start_date'] = Carbon::createFromFormat('m/d/Y', $request->member_fee_start_date)->format('Y-m-d');
-//            $memberData['member_fee_end_date'] = Carbon::createFromFormat('m/d/Y', $request->member_fee_end_date)->format('Y-m-d');
 
             $id->update($memberData);
             $id->image = $filename;
@@ -180,10 +147,6 @@ class MemberController extends Controller
         }
 
         if ($request->image == '' || $request->image == null) {
-//            $request->image = $request->image_update;
-//            $memberData['member_joining_date'] = Carbon::createFromFormat('m/d/Y', $request->member_joining_date)->format('Y-m-d');
-//            $memberData['member_fee_start_date'] = Carbon::createFromFormat('m/d/Y', $request->member_fee_start_date)->format('Y-m-d');
-//            $memberData['member_fee_end_date'] = Carbon::createFromFormat('m/d/Y', $request->member_fee_end_date)->format('Y-m-d');
 
             $id->update($memberData);
 

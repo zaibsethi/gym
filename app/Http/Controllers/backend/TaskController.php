@@ -19,7 +19,6 @@ class TaskController extends Controller
     {
         $getAllRequestData = $request->all();
         $getAllRequestData['belong_to_gym'] = Auth::user()->belong_to_gym;
-
         Task::create($getAllRequestData);
         return redirect(route('addTask'))->with('success', 'Task created successfully.');
     }
@@ -34,7 +33,6 @@ class TaskController extends Controller
     public function updateStatus($id)
     {
         $allTaskData = Task::where('id', $id)->get();
-
         foreach ($allTaskData as $allTaskDataVar) {
             if ($allTaskDataVar->task_type == "daily") {
                 $addDays = Carbon::Parse($allTaskDataVar->task_date)->addDay(1)->format('Y-m-d');
@@ -73,7 +71,6 @@ class TaskController extends Controller
     {
         $taskRequestData = $request->all();
         $id->update($taskRequestData);
-
         return redirect(route('taskList'))->with('success', 'Task updated successfully.');
     }
 }

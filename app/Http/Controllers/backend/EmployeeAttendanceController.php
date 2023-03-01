@@ -9,15 +9,13 @@ use App\Models\EmployeePackage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class EmployeeAttendanceController extends Controller
 {
     public function addEmployeeAttendance()
     {
+        // get employee and package data from database according to belongsTo gym
         $employeeData = Employee::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
-//        $employeeData = DB::table("employees")->select('*')->cursor();
-
         $packageData = EmployeePackage::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
 
         return view('backend.employee-attendance.add-attendance', compact('employeeData', 'packageData'));
@@ -26,8 +24,7 @@ class EmployeeAttendanceController extends Controller
 
     public function createEmployeeAttendance(Request $request)
     {
-//        for already marked attandance
-
+//        for already marked attendance
         $allAttendanceData = EmployeeAttendance::all();
         $cdate = Carbon::now()->format('Y-m-d');
 
@@ -64,24 +61,6 @@ class EmployeeAttendanceController extends Controller
 
         $employeeData = EmployeeAttendance::where('belong_to_gym', Auth::user()->belong_to_gym)->where('employee_id', $request->employee_id)->whereMonth('created_at', $currentDate->month)->whereYear('created_at', $currentDate->year)->get();
 
-        // Start: getting employee attendance data for comparing
-
-//        $secondLast = EmployeeAttendance::orderBy('created_at', 'desc')->skip(1)->take(1)->get();
-//        $firstRecord = EmployeeAttendance::orderBy('created_at', 'asc')->take(1)->get();
-//        foreach ($firstRecord as $firstRecordVar) {
-//            $firstRecordData = Carbon::parse($firstRecordVar->created_at)->format('Y-m-d');
-//            dd($firstRecordData);
-//        }
-//
-//        $Last = EmployeeAttendance::orderBy('created_at', 'asc')->skip(1)->take(1)->get();
-//        foreach ($Last as $LastVar) {
-//            $lastRecord = Carbon::parse($LastVar->created_at)->format('Y-m-d');
-//            dd(($lastRecord));
-//        }
-
-
-        // End: getting employee attendance data for comparing
-
         return view('backend.employee-attendance.single-employee-attendance-list', compact('employeeData',));
     }
 
@@ -89,7 +68,6 @@ class EmployeeAttendanceController extends Controller
     public function updateEmployeeAttendance(Request $request)
     {
         $cdate = Carbon::now()->format('Y-m-d');
-
         $cdateAndTime = Carbon::now();
 
         $compareEmployeeData = EmployeeAttendance::where('belong_to_gym', Auth::user()->belong_to_gym);

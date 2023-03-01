@@ -7,7 +7,6 @@ use App\Models\Employee;
 use App\Models\Expense;
 use App\Models\FeeCollection;
 use App\Models\Member;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -16,7 +15,7 @@ class DashboardController extends Controller
     {
 
 
-//total members
+       //total members
         $totalMembers = Member::where('belong_to_gym', Auth::user()->belong_to_gym)->count();
 
         // active members percentage

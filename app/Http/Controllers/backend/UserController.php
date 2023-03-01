@@ -16,50 +16,14 @@ class UserController extends Controller
 
     public function addGym()
     {
-//        $getGymData = User::orderBy('gym_id', 'desc')->latest()->get();
-//        $getGymData = User::firstWhere('gym_id', '!=',0)->take(1);
-//        $getGymData = DB::table('users')->orderBy('gym_id', 'desc')->first();
-//        $getGymData = DB::table('users')->latest('id')->first();
         $getGymData = DB::table('users')->latest('gym_id')->first();
         $id = $getGymData->gym_id;
-
-//        if ($getGymData->gym_id != null) {
-//            foreach ($getGymData as $getGymIdVar) {
-//                $id = $getGymIdVar;
-//                return view('backend.gym-profile.add-gym', compact('id'));
-//
-//            }
-//        } else {
-//            $id = 0;
-//            return view('backend.gym-profile.add-gym', compact('id'));
-//
-//        }
         return view('backend.gym-profile.add-gym', compact('id'));
     }
 
     public function createGym(Request $request)
     {
         $getData = $request->all();
-//        if ($request->gym_logo != '') {
-//            $filename = '';
-//            if ($request->hasFile('gym_logo')) {
-//                $image = $request->file('gym_logo');
-//                $path = public_path() . '/backend/images/gym/profile/';
-//                $filename = time() . $image->getClientOriginalName();
-//                $image->move($path, $filename);
-//                $request->gym_logo = $filename;
-//                $image_path = "/backend/images/gym/profile/";  // Value is not URL but directory file path
-////               start: unlink old image
-//                if ($request->gym_logo != null) {
-//                    $oldImage = '/backend/images/gym/profile/' . $request->gym_logo;
-//                    $oldImagePath = str_replace('\\', '/', public_path());
-//                    unlink($oldImagePath . $oldImage);
-//                }
-////               end: unlink old image
-//
-//            }
-//        }
-
         $filename = '';
         if ($request->hasFile('gym_logo')) {
             $image = $request->file('gym_logo');

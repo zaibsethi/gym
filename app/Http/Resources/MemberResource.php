@@ -20,12 +20,6 @@ class MemberResource extends JsonResource
             'memberPhone' => $this->member_phone,
             'memberFeeDate' => $this->member_fee_end_date,
             'apiType' => $this->api_type,
-//            'id' => new MemberResource($this->id),
-//            'memberName' => new MemberResource($this->member_name),
-//            'memberPhone' => new MemberResource($this->member_phone),
-//            'memberFeeDate' => new MemberResource($this->member_fee_end_date),
         ];
-
-
     }
 }

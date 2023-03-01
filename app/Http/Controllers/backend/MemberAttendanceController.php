@@ -3,18 +3,12 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Member\UpdateMemberRequest;
 use App\Models\Member;
 use App\Models\MemberAttendance;
 use App\Models\Package;
 use Carbon\Carbon;
-
-//use http\Header\Parser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
-use Yajra\DataTables\Facades\DataTables;
 
 class MemberAttendanceController extends Controller
 {
@@ -130,46 +124,6 @@ class MemberAttendanceController extends Controller
 
     }
 
-//    public function updateMemberFeeDate(Request $request)
-//    {
-//        $cdate = Carbon::parse(now()->format('Y-m-d'))->addMonths(-1);
-//        $cdate1 = now()->format('Y-m-d');
-//
-////            $notFound = Member::where('member_phone', '!=',$request->member_phone);
-//
-//
-//        $checkStatus = Member::where('member_phone', $request->member_phone)->where('member_fee_end_Date', '<', $cdate)->update(['member_fee_end_Date' => $cdate1]);
-//
-//        $memberFind = Member::all();
-//        if ($request->member_phone == null) {
-//            return redirect()->route('addAttendanceById')->with('danger', 'Enter mobile number.');
-//
-//        }
-//
-//        foreach ($memberFind as $memberFindVar) {
-//
-//
-////         if request phone is equal to member number it will store in old member table
-//            if ($memberFindVar->member_phone == $request->member_phone) {
-//
-//                if ($checkStatus != null) {
-//                    return redirect()->route('addAttendanceById')->with('success',$memberFindVar->member_name. '('.$memberFindVar->id.')'. '  added in attendance list.');
-//
-//                } elseif ($checkStatus == null) {
-//                    return redirect()->route('addAttendanceById')->with('success',$memberFindVar->member_name. '('.$memberFindVar->id.')'.  '  already  added in attendance list.');
-//
-//                }
-//
-//            }
-//        }
-//
-//
-////        return view('backend.member-attendance.add-attendance-by-Id')->with('success', 'Member not found.');
-//
-//        return Redirect::back()->with('danger', 'Member not found.');
-//
-//
-//    }
 
     public function updateMemberFeeDate(Request $request)
     {

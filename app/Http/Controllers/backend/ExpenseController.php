@@ -5,7 +5,6 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateExpenseRequest;
 use App\Models\Expense;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ExpenseController extends Controller

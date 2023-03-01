@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Expense;
 use App\Models\FeeCollection;
 use App\Models\Member;
 use App\Models\MemberAttendance;

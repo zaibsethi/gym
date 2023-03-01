@@ -5,7 +5,6 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreatePackageRequest;
 use App\Models\Package;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PackageController extends Controller

@@ -5,9 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateEmployeePackage;
 use App\Http\Requests\CreatePackageRequest;
-use App\Models\Employee;
 use App\Models\EmployeePackage;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class EmployeePackageController extends Controller
