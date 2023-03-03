@@ -18,8 +18,7 @@ class MemberAttendanceController extends Controller
 
         $cdate = Carbon::now()->addDay(-20)->format('Y-m-d');
 //        $memberData = DB::table("members")->where('member_fee_end_date', '>', $cdate)->cursor();
-//           $memberData = Member::where('member_fee_end_date', '>', $cdate)->cursor();
-
+//        $memberData = Member::where('member_fee_end_date', '>', $cdate)->cursor();
 //        $memberData = DB::table('members')->orderBy('id')->where('member_fee_end_date', '>', $cdate)->skip(0)->take(1000)->get();;
         $memberData = Member::where('belong_to_gym', Auth::user()->belong_to_gym)->where('member_fee_end_date', '>', $cdate)->get();
 //        $memberData = Member::all();
@@ -67,7 +66,6 @@ class MemberAttendanceController extends Controller
         $memberData = MemberAttendance::where('belong_to_gym', Auth::user()->belong_to_gym)->where('member_id', $request->member_id)->get();
         return view('backend.member-attendance.single-member-attendance-list', compact('memberData'));
     }
-
 
     public function addAttendanceById()
     {
@@ -123,7 +121,6 @@ class MemberAttendanceController extends Controller
         return redirect()->route('addAttendanceById')->with('danger', "Member not Found.");
 
     }
-
 
     public function updateMemberFeeDate(Request $request)
     {

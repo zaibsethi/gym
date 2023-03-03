@@ -33,6 +33,7 @@ use \App\Http\Controllers\backend\UserController;
 
 Route::group(['prefix' => 'admin', 'namespace' => 'backend', 'middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::post('/send-sms', [DashboardController::class, 'sendSms'])->name('sendSms');
 
     // Begin: MemberController
     Route::get('add-member', [MemberController::class, 'addMember'])->name('addMember')->middleware('isOwner');

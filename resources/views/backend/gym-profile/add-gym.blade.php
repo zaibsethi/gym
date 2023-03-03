@@ -37,7 +37,8 @@
                             <h4 class="text-dark-50 text-center mt-0 fw-bold">Gym Data</h4>
                         </div>
 
-                        <form method="post" action="{{ route('createGym')}}" autocomplete="off" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('createGym')}}" autocomplete="off"
+                              enctype="multipart/form-data">
                             @csrf
 
                             <label class="form-label">Gym Id:</label>
@@ -57,6 +58,22 @@
                                 <label class="form-label">Gym Logo</label>
                                 <input class="form-control" type="file"
                                        placeholder="Gym Logo" name="gym_logo">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Gym package</label>
+                                <input class="form-control" type="text"
+                                       placeholder="Gym package" name="gym_package">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Package start</label>
+                                <input class="form-control" type="date"
+                                       placeholder="Gym package start date" name="gym_package_start_date">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Package end</label>
+                                <input class="form-control" type="date"
+                                       placeholder="Gym package end date" name="gym_package_end_date">
                             </div>
                             <hr>
                             <div class="text-center w-75 m-auto">

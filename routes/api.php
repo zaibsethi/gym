@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 //});
 
 
-
 //Route::get("packages-list", [\App\Http\Controllers\Api\PackageController::class, 'packagesList']);
 Route::get("all-members-list", [\App\Http\Controllers\Api\MemberController::class, 'membersList']);
 Route::get("defaulter-members-list", [\App\Http\Controllers\Api\MemberController::class, 'defaulterMembersFeeList']);

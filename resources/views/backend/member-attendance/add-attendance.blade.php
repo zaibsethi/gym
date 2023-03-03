@@ -18,7 +18,8 @@
                 <div class="card-body">
                     <div class="tab-content">
                         <div class="tab-pane show active" id="alt-pagination-preview">
-                            <table id="alternative-page-datatable" class="table table-striped dt-responsive nowrap w-100">
+                            <table id="alternative-page-datatable"
+                                   class="table table-striped dt-responsive nowrap w-100">
 
                                 <thead>
                                 <tr>
@@ -37,11 +38,10 @@
                                 <br><br>
                                 <tr>
                                     <th>ID</th>
-{{--                                    <th>Picture</th>--}}
+                                    {{--                                    <th>Picture</th>--}}
                                     {{--                                       <th>Mem Qr</th>--}}
                                     <th>Name</th>
                                     @if(\Illuminate\Support\Facades\Auth::user()->type == 'owner')
-
                                         <th>phone</th>
                                     @endif
                                     <th>fee date</th>
@@ -91,19 +91,19 @@
 
                                         <td>{{$memberDataVar->id}}</td>
 
-{{--                                        <td>--}}
-{{--                                            @if($memberDataVar->image == null)--}}
-{{--                                                --}}{{--                                                      if there is no pic then default will display--}}
-{{--                                                <img class="img-responsive  img-thumbnail"--}}
-{{--                                                     style="height: 120px; width: 120px"--}}
-{{--                                                     src="{{ asset('backend/images/black_member_profile_picture.jpg') }}"--}}
-{{--                                            @else--}}
-{{--                                                --}}{{--                                                        if getting pic from database--}}
-{{--                                                <img class="img-responsive  img-thumbnail"--}}
-{{--                                                     style="height: 120px; width: 120px"--}}
-{{--                                                     src="{{asset('/backend/images/member/profile/'.$memberDataVar->image)}}">--}}
-{{--                                            @endif--}}
-{{--                                        </td>--}}
+                                        {{--                                        <td>--}}
+                                        {{--                                            @if($memberDataVar->image == null)--}}
+                                        {{--                                                --}}{{--                                                      if there is no pic then default will display--}}
+                                        {{--                                                <img class="img-responsive  img-thumbnail"--}}
+                                        {{--                                                     style="height: 120px; width: 120px"--}}
+                                        {{--                                                     src="{{ asset('backend/images/black_member_profile_picture.jpg') }}"--}}
+                                        {{--                                            @else--}}
+                                        {{--                                                --}}{{--                                                        if getting pic from database--}}
+                                        {{--                                                <img class="img-responsive  img-thumbnail"--}}
+                                        {{--                                                     style="height: 120px; width: 120px"--}}
+                                        {{--                                                     src="{{asset('/backend/images/member/profile/'.$memberDataVar->image)}}">--}}
+                                        {{--                                            @endif--}}
+                                        {{--                                        </td>--}}
                                         {{--                                        <td>{!! QrCode::generate($memberDataVar->id); !!}</td>--}}
                                         <td>{{$memberDataVar->member_name}}</td>
                                         @if(\Illuminate\Support\Facades\Auth::user()->type == 'owner')
@@ -306,7 +306,6 @@
 {{--            @if(session()->has('success'))--}}
 
 
-
 {{--                <div class="alert alert-success" role="alert">--}}
 {{--                    <h4 class="alert-heading"><strong>Success - </strong>{{session('success')}}</h4>--}}
 {{--                    <hr>--}}
@@ -314,7 +313,6 @@
 {{--            @endif--}}
 
 {{--            @if(session()->has('danger'))--}}
-
 
 
 {{--                <div class="alert alert-danger" role="alert">--}}
@@ -395,8 +393,6 @@
 
 
 {{--                                @if((Carbon\Carbon::now()->format('Y-m-d')) > (\Carbon\Carbon::parse($memberDataVar->member_fee_end_date)->format('Y-m-d')))--}}
-
-
 
 
 {{--                                    <button--}}

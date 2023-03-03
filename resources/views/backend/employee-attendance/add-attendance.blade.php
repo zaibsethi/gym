@@ -70,7 +70,7 @@
 
                                 @foreach($employeeData as $employeeDataVar)
                                     <div style="visibility: hidden">
-                                        <input value="{{$currentDate  =Carbon\Carbon::now()->addMonth(-1)}}" hidden>
+                                        <input value="{{$currentDate  =Carbon\Carbon::now()->addMonth(-2)}}" hidden>
                                     </div>
                                     @if(($employeeDataVar->employee_salary_end_date . " " . "00:00:00") > ($currentDate))
 
