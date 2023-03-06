@@ -26,7 +26,7 @@
                                 <tr>
                                     <th>Employee ID</th>
                                     <th>Picture</th>
-                                    <th>Emp Qr</th>
+{{--                                    <th>Emp Qr</th>--}}
                                     <th>Name</th>
                                     <th>phone</th>
                                     <th>Salary date</th>
@@ -77,7 +77,7 @@
                                                      src="{{asset('/backend/images/employee/profile/'.$employeeDataVar->image)}}">
                                             @endif
                                         </td>
-                                        <td>{!! QrCode::generate($employeeDataVar->id); !!}
+{{--                                        <td>{!! QrCode::generate($employeeDataVar->id); !!}--}}
                                         </td>
                                         <td>{{$employeeDataVar->employee_name}}</td>
                                         <td>{{$employeeDataVar->employee_phone}}</td>

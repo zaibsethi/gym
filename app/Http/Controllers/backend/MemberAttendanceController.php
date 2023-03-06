@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Member;
 use App\Models\MemberAttendance;
 use App\Models\Package;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,8 +15,6 @@ class MemberAttendanceController extends Controller
 {
     public function addAttendance()
     {
-
-
         $cdate = Carbon::now()->addDay(-20)->format('Y-m-d');
 //        $memberData = DB::table("members")->where('member_fee_end_date', '>', $cdate)->cursor();
 //        $memberData = Member::where('member_fee_end_date', '>', $cdate)->cursor();
@@ -30,8 +29,7 @@ class MemberAttendanceController extends Controller
 
     public function createMemberAttendance(Request $request)
     {
-//        for already marked attendance
-
+        //for already marked attendance
         $allAttendanceData = MemberAttendance::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
         $cDate = Carbon::now()->format('Y-m-d');
 
@@ -40,12 +38,8 @@ class MemberAttendanceController extends Controller
             $createdAtFromDb = Carbon::parse($allAttendanceDataVar->created_at)->format('Y-m-d');
             if ($createdAtFromDb == $cDate && $allAttendanceDataVar->member_name == $request->member_name) {
                 return redirect()->route('addAttendance')->with('success', 'Attendance Already Marked.');
-
             }
-
         }
-
-
         $getMemberAttendanceData = $request->all();
         $getMemberAttendanceData['belong_to_gym'] = Auth::user()->belong_to_gym;
         MemberAttendance::create($getMemberAttendanceData);
@@ -54,7 +48,32 @@ class MemberAttendanceController extends Controller
             return redirect(route('addAttendance'))->with('success', 'Attendance Marked. Fee Paid.');
 
         } else {
-            return redirect(route('addAttendance'))->with('danger', 'Attendance Marked. Please Pay your fee.');
+            $gymData = User::where('belong_to_gym', Auth::user()->belong_to_gym)->where('gym_package', 'paid')->get();
+            if ($gymData == true) {
+                $api_key = "923092018911-e1179358-7e5e-475b-b2b0-4836839db84e";///YOUR API KEY
+                $mobile = '923244900875';///Recepient Mobile Number
+                $sender = "Something";
+                $message = "new message";
+                ////sending sms
+                $post = "sender=" . urlencode($sender) . "&mobile=" . urlencode($mobile) . "&message=" . urlencode($message) . "";
+                $url = "https://sendpk.com/api/sms.php?api_key=$api_key";
+                $ch = curl_init();
+                $timeout = 0; // set to zero for no timeout
+                curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)');
+                curl_setopt($ch, CURLOPT_URL, $url);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+                $result = curl_exec($ch);
+//                /*Print Responce*/
+//                echo $result;
+                return redirect(route('addAttendance'))->with('danger', 'Attendance Marked. Please Pay your fee.');
+
+            } else {
+                return redirect(route('addAttendance'))->with('danger', 'Attendance Marked. Please Pay your fee.');
+            }
+
 
         }
     }
@@ -62,7 +81,6 @@ class MemberAttendanceController extends Controller
     public function singleMemberAttendanceList(Request $request)
     {
         //get id from request and send specific member Attendance list
-
         $memberData = MemberAttendance::where('belong_to_gym', Auth::user()->belong_to_gym)->where('member_id', $request->member_id)->get();
         return view('backend.member-attendance.single-member-attendance-list', compact('memberData'));
     }
@@ -74,10 +92,8 @@ class MemberAttendanceController extends Controller
 
     public function createMemberAttendanceById(Request $request)
     {
-
         $memberAttendance = MemberAttendance::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
         $cDate = Carbon::now()->format('Y-m-d');
-
         foreach ($memberAttendance as $memberAttendanceVar) {
 //            get created_at from db and convert the format date only and compare
             $createdAtFromDb = Carbon::parse($memberAttendanceVar->created_at)->format('Y-m-d');

@@ -28,6 +28,9 @@
                                     <th>Gym ID</th>
                                     <th>Name</th>
                                     <th>Phone</th>
+                                    <th>Package</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
                                     <th>action</th>
                                 </tr>
                                 </thead>
@@ -74,12 +77,15 @@
 
                                         <td>{{$gymDataVar->gym_name}}</td>
                                         <td>{{$gymDataVar->phone}}</td>
+                                        <td>{{$gymDataVar->gym_package}}</td>
+                                        <td>{{$gymDataVar->gym_package_start_date}}</td>
+                                        <td>{{$gymDataVar->gym_package_end_date}}</td>
 
 
                                         @if(\Illuminate\Support\Facades\Auth::user()->type == "developer")
                                             <td>
-{{--                                                <a href="{{route('editGym',['gym_id'=>$gymDataVar->gym_id])}}"--}}
-{{--                                                   class="action-icon"> <i class="mdi mdi-pencil"></i></a>--}}
+                                                {{--                                                <a href="{{route('editGym',['gym_id'=>$gymDataVar->gym_id])}}"--}}
+                                                {{--                                                   class="action-icon"> <i class="mdi mdi-pencil"></i></a>--}}
 
                                                 {{"edit"}}
                                             </td>

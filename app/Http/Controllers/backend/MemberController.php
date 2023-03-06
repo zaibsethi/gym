@@ -94,7 +94,7 @@ class MemberController extends Controller
 
 
         if (Cache::missing('mambers')) {
-            Cache::put('mambers', Member::select(['id', 'member_name', 'member_phone'])->get(), now()->addSecond(20));
+            Cache::put('mambers', Member::select(['id', 'member_name', 'member_phone', 'member_fee_end_date'])->get(), now()->addSecond(20));
             $memberData = Cache::get('mambers');
         } else {
             $memberData = Cache::get('mambers');

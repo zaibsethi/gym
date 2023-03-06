@@ -60,10 +60,18 @@
                                        placeholder="Gym Logo" name="gym_logo">
                             </div>
 
+                            <label class="form-label">Gender</label>
+
+
                             <div class="mb-3">
                                 <label class="form-label">Gym package</label>
-                                <input class="form-control" type="text"
-                                       placeholder="Gym package" name="gym_package">
+                                <select class="form-select mb-3" name="gym_package" required>
+                                    <option selected value="">Select package</option>
+                                    <option value="free">Free</option>
+                                    <option value="paid">Paid</option>
+
+                                </select>
+
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Package start</label>

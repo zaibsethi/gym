@@ -226,8 +226,8 @@
                                         <td>{{$memberDataVar->member_name}}</td>
                                         <td>{{$memberDataVar->member_phone}}</td>
                                         <td>{{$memberDataVar->member_fee_end_date}}</td>
-                                    <!--<td>{{$memberDataVar->member_blood_group}}</td>-->
-                                    <!--<td>{{$memberDataVar->member_shift}}</td>-->
+{{--                                    <!--<td>{{$memberDataVar->member_blood_group}}</td>-->--}}
+{{--                                    <!--<td>{{$memberDataVar->member_shift}}</td>-->--}}
 {{--                                        <td>--}}
 {{--                                            --}}{{-- getting data from package table to compare with member selected package--}}
 {{--                                            @foreach($packageData as $packageDataVar)--}}
