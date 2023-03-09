@@ -28,7 +28,7 @@
                                 <tr>
                                     <th>Member ID</th>
                                     <th>Name</th>
-{{--                                    <th>phone</th>--}}
+                                    {{--                                    <th>phone</th>--}}
                                     <th>fee date</th>
 
                                     <th>Package Amount</th>
@@ -68,7 +68,7 @@
 
 
                                             <td>{{$memberDataVar->member_name}}</td>
-{{--                                            <td>{{$memberDataVar->member_phone}}</td>--}}
+                                            {{--                                            <td>{{$memberDataVar->member_phone}}</td>--}}
                                             <td>
                                                 {{--                                            get member_fee_end_date with time and convert into only date--}}
 
@@ -189,6 +189,8 @@
                                                 <form action="{{route('createFee',['id'=>$memberDataVar->id])}}"
                                                       method="post">
                                                     @csrf
+                                                    <input name="belong_to_gym" hidden>
+
                                                     <input name="member_id" value="{{$memberDataVar->id}}" hidden>
                                                     <input name="member_name" value="{{$memberDataVar->member_name}}"
                                                            hidden>
@@ -210,12 +212,13 @@
                                                         value="{{$endtDate =date('Y-m-d', strtotime($memberDataVar->member_fee_end_date))}}"
                                                         hidden>
 
-                                                @if($endtDate > $currentDate)
+                                                    @if($endtDate > $currentDate)
 
                                                         <button type="submit" class="btn btn-info">Collect Fee</button>
                                                     @else
-{{--                                                        <button class="btn btn-danger" disabled>Update Fee</button>--}}
-                                                        <button type="submit" class="btn btn-danger">Collect late Fee</button>
+                                                        {{--                                                        <button class="btn btn-danger" disabled>Update Fee</button>--}}
+                                                        <button type="submit" class="btn btn-danger">Collect late Fee
+                                                        </button>
 
                                                     @endif
                                                 </form>
@@ -225,14 +228,15 @@
                                                 {{--                                            form for sending member->id for fee history for this member--}}
                                                 @if(\Illuminate\Support\Facades\Auth::user()->type == "owner")
 
-                                                <form method="post"
-                                                      action="{{route('feeHistory')}}">
-                                                    @csrf
-                                                    <input name="member_id" value="{{$memberDataVar->id}}"
-                                                           hidden>
-                                                    <button type="submit" class="btn btn-success">Fee History</button>
-                                                </form>
-                                                    @endif
+                                                    <form method="post"
+                                                          action="{{route('feeHistory')}}">
+                                                        @csrf
+                                                        <input name="member_id" value="{{$memberDataVar->id}}"
+                                                               hidden>
+                                                        <button type="submit" class="btn btn-success">Fee History
+                                                        </button>
+                                                    </form>
+                                                @endif
                                             </td>
                                         </tr>
 

@@ -25,8 +25,8 @@
 
                     <!-- Logo -->
                     <div class="card-header pt-4 pb-4 text-center bg-primary">
-                        <a href="index.html">
-                            <span><img src="assets/images/logo.png" alt="" height="18"></span>
+                        <a href="#">
+                            <span><img class="img-responsive" src="{{asset('assets/images/logo.png')}}" alt="" height="18" style="width: 100px;height: 70px"></span>
                         </a>
                     </div>
 

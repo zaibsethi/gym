@@ -100,7 +100,7 @@
 
                     <!-- Logo -->
                     <div class="card-header pt-4 pb-4 text-center bg-primary">
-                        <a href="index.html">
+                        <a href="#">
                             <span><img class="img-responsive" src="{{asset('assets/images/logo.png')}}" alt="" height="18" style="width: 100px;height: 70px"></span>
                         </a>
                     </div>
@@ -111,7 +111,15 @@
                             <h4 class="text-dark-50 text-center mt-0 fw-bold">Sign In</h4>
                             <p class="text-muted mb-4">Enter your email address and password to access admin panel.</p>
                         </div>
-
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form method="post" action="{{ route('login')}}" autocomplete="off" >
                             @csrf
 

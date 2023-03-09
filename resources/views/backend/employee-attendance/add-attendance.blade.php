@@ -175,6 +175,7 @@
 
                                                 </form>
                                             </td>
+                                            @if(Illuminate\Support\Facades\Auth::user()->type == 'owner')
                                             <td>
 
                                                 {{--                                                only used for getting employee id for attendance list--}}
@@ -189,6 +190,8 @@
                                                 </form>
 
                                             </td>
+                                                @endif
+                                            <td>
                                         </tr>
 
                                     @endif

@@ -214,29 +214,6 @@
                 </div>
             </li>
 
-            <li class="side-nav-title side-nav-item">Employee Package</li>
-
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#employeePackage" aria-expanded="false" aria-controls="gymPackage"
-                   class="side-nav-link">
-                    <i class="uil-money-bill-stack"></i>
-                    <span> Salary Package </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="employeePackage">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{route('addEmployeePackage')}}">Create Employee Package</a>
-                        </li>
-                        <li>
-                            <a href="{{route('employeePackagesList')}}"> Employee Packages List</a>
-                        </li>
-
-
-                    </ul>
-                </div>
-            </li>
 
             <li class="side-nav-title side-nav-item">Gym Employee</li>
 
@@ -290,43 +267,68 @@
                 </div>
             </li>
 
-            <li class="side-nav-title side-nav-item">Member Things</li>
+            <li class="side-nav-title side-nav-item">Employee Package</li>
+
+
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#memberThings" aria-expanded="false" aria-controls="gymMembers"
+                <a data-bs-toggle="collapse" href="#employeePackage" aria-expanded="false" aria-controls="gymPackage"
                    class="side-nav-link">
-                    <i class="uil-clipboard-alt"></i>
-                    <span>  Manage Things </span>
+                    <i class="uil-money-bill-stack"></i>
+                    <span> Salary Package </span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse" id="memberThings">
+                <div class="collapse" id="employeePackage">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{route('addMemberThing')}}">Add Thing</a>
-                            <a href="{{route('thingsList')}}">Things List</a>
+                            <a href="{{route('addEmployeePackage')}}">Create Employee Package</a>
                         </li>
+                        <li>
+                            <a href="{{route('employeePackagesList')}}"> Employee Packages List</a>
+                        </li>
+
 
                     </ul>
                 </div>
             </li>
 
-            <li class="side-nav-title side-nav-item">Manage Task</li>
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#task" aria-expanded="false" aria-controls="gymMembers"
-                   class="side-nav-link">
-                    <i class="uil-clipboard-alt"></i>
-                    <span>  Manage Task </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="task">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{route('addTask')}}">Add Task</a>
-                            <a href="{{route('taskList')}}">Task List</a>
-                        </li>
 
-                    </ul>
-                </div>
-            </li>
+            {{--            <li class="side-nav-title side-nav-item">Member Things</li>--}}
+            {{--            <li class="side-nav-item">--}}
+            {{--                <a data-bs-toggle="collapse" href="#memberThings" aria-expanded="false" aria-controls="gymMembers"--}}
+            {{--                   class="side-nav-link">--}}
+            {{--                    <i class="uil-clipboard-alt"></i>--}}
+            {{--                    <span>  Manage Things </span>--}}
+            {{--                    <span class="menu-arrow"></span>--}}
+            {{--                </a>--}}
+            {{--                <div class="collapse" id="memberThings">--}}
+            {{--                    <ul class="side-nav-second-level">--}}
+            {{--                        <li>--}}
+            {{--                            <a href="{{route('addMemberThing')}}">Add Thing</a>--}}
+            {{--                            <a href="{{route('thingsList')}}">Things List</a>--}}
+            {{--                        </li>--}}
+
+            {{--                    </ul>--}}
+            {{--                </div>--}}
+            {{--            </li>--}}
+
+            {{--            <li class="side-nav-title side-nav-item">Manage Task</li>--}}
+            {{--            <li class="side-nav-item">--}}
+            {{--                <a data-bs-toggle="collapse" href="#task" aria-expanded="false" aria-controls="gymMembers"--}}
+            {{--                   class="side-nav-link">--}}
+            {{--                    <i class="uil-clipboard-alt"></i>--}}
+            {{--                    <span>  Manage Task </span>--}}
+            {{--                    <span class="menu-arrow"></span>--}}
+            {{--                </a>--}}
+            {{--                <div class="collapse" id="task">--}}
+            {{--                    <ul class="side-nav-second-level">--}}
+            {{--                        <li>--}}
+            {{--                            <a href="{{route('addTask')}}">Add Task</a>--}}
+            {{--                            <a href="{{route('taskList')}}">Task List</a>--}}
+            {{--                        </li>--}}
+
+            {{--                    </ul>--}}
+            {{--                </div>--}}
+            {{--            </li>--}}
 
             <li class="side-nav-title side-nav-item">Manage User</li>
             <li class="side-nav-item">

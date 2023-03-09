@@ -118,7 +118,7 @@
                     <div class="col-lg-6">
                         <label class="form-label">Blood group</label>
 
-                        <select class="form-select mb-3" name="member_blood_group" >
+                        <select class="form-select mb-3" name="member_blood_group">
                             <option selected
                                     value="{{$memberDataByID->member_blood_group}}">{{$memberDataByID->member_blood_group}}</option>
                             <option value="">select</option>
@@ -147,18 +147,19 @@
                     <div class="col-lg-6">
                         <label class="form-label">Trainer</label>
 
-                        <select class="form-select mb-3" name="trainer" >
+                        <select class="form-select mb-3" name="trainer">
                             <option value="">Select trainer</option>
 
-                        @foreach($getEmployeeData as $getEmployeeDataVar)
+                            @foreach($getEmployeeData as $getEmployeeDataVar)
                                 @if ($memberDataByID->trainer != null) //  !$memberDataByID->trainer
-                                    <option
-                                            value="{{$getEmployeeDataVar->employee_name}}">{{$getEmployeeDataVar->employee_name}}</option>
-                                    @endif
+                                <option
+                                    value="{{$getEmployeeDataVar->employee_name}}">{{$getEmployeeDataVar->employee_name}}</option>
+                                @endif
 
-                                <option value="{{$getEmployeeDataVar->employee_name}}">{{$getEmployeeDataVar->employee_name}}</option>
+                                <option
+                                    value="{{$getEmployeeDataVar->employee_name}}">{{$getEmployeeDataVar->employee_name}}</option>
 
-{{--                                <option value="A+">A+</option>--}}
+                                {{--                                <option value="A+">A+</option>--}}
                             @endforeach
                         </select>
                         <div class="valid-feedback">
@@ -172,7 +173,7 @@
                     <div class="col-lg-6">
                         <label class="form-label">Trainer fee</label>
                         <input type="text" class="form-control date"
-                               name="trainer_fee" value="{{$memberDataByID->trainer_fee}}" >
+                               name="trainer_fee" value="{{$memberDataByID->trainer_fee}}">
                         <div class="valid-feedback">
                             Looks good!
                         </div>
@@ -322,6 +323,7 @@
             startDate = document.getElementById("member_fee_start_date").value;
             document.getElementById("member_fee_end_date").value = startDate;
         }
+
 
     </script>
 @endsection

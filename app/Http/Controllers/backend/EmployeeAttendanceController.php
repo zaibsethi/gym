@@ -29,7 +29,7 @@ class EmployeeAttendanceController extends Controller
         $cdate = Carbon::now()->format('Y-m-d');
 
         foreach ($allAttendanceData as $allAttendanceDataVar) {
-//            get created_at from db and convert the format date only and compare
+//          get created_at from db and convert the format date only and compare
             $createdAtFromDb = Carbon::parse($allAttendanceDataVar->created_at)->format('Y-m-d');
             if ($createdAtFromDb == $cdate && $allAttendanceDataVar->employee_name == $request->employee_name) {
                 return redirect()->route('addEmployeeAttendance')->with('success', 'Attendance Already Marked.');
@@ -70,7 +70,7 @@ class EmployeeAttendanceController extends Controller
         $cdate = Carbon::now()->format('Y-m-d');
         $cdateAndTime = Carbon::now();
 
-        $compareEmployeeData = EmployeeAttendance::where('belong_to_gym', Auth::user()->belong_to_gym);
+        $compareEmployeeData = EmployeeAttendance::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
         foreach ($compareEmployeeData as $compareEmployeeVar) {
 //            $checkNewDate = ($compareEmployeeVar->created_at)->format('d.m.Y');
             if ($compareEmployeeVar->created_at->format('Y-m-d') == $cdate && $compareEmployeeVar->employee_name == $request->employee_name) {

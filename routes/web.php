@@ -36,15 +36,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'backend', 'middleware' => 'au
     Route::post('/send-sms', [DashboardController::class, 'sendSms'])->name('sendSms');
 
     // Begin: MemberController
-    Route::get('add-member', [MemberController::class, 'addMember'])->name('addMember')->middleware('isOwner');
-    Route::post('create-member', [MemberController::class, 'createMember'])->name('createMember')->middleware('isOwner');
-    Route::get('members-list', [MemberController::class, 'memberList'])->name('memberList')->middleware('isOwner');
-    Route::get('edit-member/{id}', [MemberController::class, 'editMember'])->name('editMember')->middleware('isOwner');
+    Route::get('add-member', [MemberController::class, 'addMember'])->name('addMember')->middleware('isSuperAdminOrOwner');
+    Route::post('create-member', [MemberController::class, 'createMember'])->name('createMember')->middleware('isSuperAdminOrOwner');
+    Route::get('members-list', [MemberController::class, 'memberList'])->name('memberList')->middleware('isSuperAdminOrOwner');
+    Route::get('edit-member/{id}', [MemberController::class, 'editMember'])->name('editMember')->middleware('isSuperAdminOrOwner');
     Route::post('update-member/{id}', [MemberController::class, 'updateMember'])->name('updateMember')->middleware('isSuperAdminOrOwner');
     Route::post('update-member-date', [MemberController::class, 'updateMemberDate'])->name('updateMemberDate')->middleware('isSuperAdminOrOwner');
     Route::get('export-members', [MemberController::class, 'memberExport'])->name('memberExport')->middleware('isOwner');
     Route::post('import-members', [MemberController::class, 'memberImport'])->name('memberImport')->middleware('isOwner');
-    Route::get('personal-trainer', [MemberController::class, 'personalTraining'])->name('personalTraining');
+    Route::get('personal-trainer', [MemberController::class, 'personalTraining'])->name('personalTraining')->middleware('isTrainer');
 // end: MemberController
 
 
@@ -192,7 +192,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'backend', 'middleware' => 'au
 
         Route::get('add-employee-attendance', [EmployeeAttendanceController::class, 'addEmployeeAttendance'])->name('addEmployeeAttendance');
         Route::post('create-employee-attendance', [EmployeeAttendanceController::class, 'createEmployeeAttendance'])->name('createEmployeeAttendance');
-        Route::post('update-employee-attendance', [EmployeeAttendanceController::class, 'updateEmployeeAttendance'])->name('updateEmployeeAttendance')->middleware('isOwner');
+        Route::post('update-employee-attendance', [EmployeeAttendanceController::class, 'updateEmployeeAttendance'])->name('updateEmployeeAttendance');
         Route::post('single-employee-attendance-list', [EmployeeAttendanceController::class, 'singleEmployeeAttendanceList'])->name('singleEmployeeAttendanceList')->middleware('isOwner');
     });
     // end : EmployeeAttendanceController

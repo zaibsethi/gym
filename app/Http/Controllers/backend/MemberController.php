@@ -47,9 +47,7 @@ class MemberController extends Controller
 
     public function createMember(CreateMemberRequest $request)
     {
-
         $getMemberData = $request->all();
-
         // save member image
         $filename = '';
 //        if ($request->hasFile('image')) {
@@ -70,7 +68,7 @@ class MemberController extends Controller
 //            $memberData->image = $filename;
 //            $memberData->save();
 //        }
-        return redirect(route('addMember'))->with('success', 'Member added successfully.');
+        return redirect(route('addMember'))->with('success', 'Member created successfully.');
 
 
     }
@@ -117,6 +115,18 @@ class MemberController extends Controller
 
     function updateMember(UpdateMemberRequest $request, Member $id)
     {
+
+        if ($id->member_phone == $request->member_phone) {
+            $this->validate($request, [
+                'member_phone' => 'required',
+            ]);
+        } else {
+
+            $this->validate($request, [
+                'member_phone' => 'required|unique:members',
+            ]);
+        }
+
 
         $memberData = $request->all();
         // update member image

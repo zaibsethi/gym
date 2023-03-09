@@ -48,7 +48,8 @@ class MemberAttendanceController extends Controller
             return redirect(route('addAttendance'))->with('success', 'Attendance Marked. Fee Paid.');
 
         } else {
-            $gymData = User::where('belong_to_gym', Auth::user()->belong_to_gym)->where('gym_package', 'paid')->get();
+            $cDate1 =now()->format('Y-m-d');
+            $gymData = User::where('belong_to_gym', Auth::user()->belong_to_gym)->where('gym_package', 'paid')->where('gym_package_end_date','=<',$cDate1)->get();
             if ($gymData == true) {
                 $api_key = "923092018911-e1179358-7e5e-475b-b2b0-4836839db84e";///YOUR API KEY
                 $mobile = '923244900875';///Recepient Mobile Number

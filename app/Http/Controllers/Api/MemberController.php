@@ -4,25 +4,61 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\MemberResource;
-use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Models\Member;
-use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
 
 class MemberController extends Controller
 {
+
+
+    public function login(Request $request)
+    {
+        $data = $request->validate([
+            'email' => 'email|required',
+            'password' => 'required'
+        ]);
+
+        if (!auth()->attempt($data)) {
+            return response(['error_message' => 'Incorrect Details.
+            Please try again']);
+        }
+
+        $token = auth()->user()->createToken('API Token')->accessToken;
+
+//        return response(['user' => auth()->user(), 'token' => $token]);
+        return response(['token' => $token]);
+
+    }
+//    public function login()
+//    {
+//        if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+//            $user = Auth::user();
+//            $success['token'] = $user->createToken('gym_cms')->accessToken;
+//            return response()->json(['success' => $success], 202);
+//        } else {
+//            return response()->json(['error' => 'Unauthorised'], 401);
+//        }
+//
+//    }
+
     public function membersList()
     {
-        //current date
-        $cDate = now();
-        //compare to current month
-        $allMembersData = Member::where('belong_to_gym', Auth::user()->belong_to_gym)->whereYear('all_members_list_api_date', $cDate->year)->whereMonth('all_members_list_api_date', '!=', $cDate->month)->get();
-        foreach ($allMembersData as $allMembersDataVar) {
-            $allMembersDataVar->api_type = 'all_member';
-        }
-        return ['status' => true, 'message' => "List of all Members.", 'data' => ["members" => MemberResource::collection($allMembersData)]];
+
+
+//        $user = Auth::user();
+//        return response()->json(['success' => $user], 202);
+//        $token = Auth::user()->token();
+//        return $token;
+//        //current date
+//        $cDate = now();
+//        //compare to current month
+//        $allMembersData = Member::whereYear('all_members_list_api_date', $cDate->year)->whereMonth('all_members_list_api_date', '!=', $cDate->month)->get();
+//        foreach ($allMembersData as $allMembersDataVar) {
+//            $allMembersDataVar->api_type = 'all_member';
+//        }
+//        return ['status' => true, 'message' => "List of all Members.", 'data' => ["members" => MemberResource::collection($allMembersData)]];
+
 
     }
 

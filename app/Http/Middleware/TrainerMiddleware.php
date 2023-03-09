@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class OwnerOrSuperAdminMiddleware
+class TrainerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,10 +18,7 @@ class OwnerOrSuperAdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check()) {
-//            if (Auth::user()->type == 'superAdmin'|| 'owner')
-                if(Auth::user()->type == 'owner' || Auth::user()->type == 'superAdmin')
-
-                {
+            if (Auth::user()->type == 'trainer') {
 //                return redirect()->with('status', 'Access Denied you are not Owner.');
                 return $next($request);
 
@@ -31,7 +28,5 @@ class OwnerOrSuperAdminMiddleware
 
         } else {
             return redirect()->back()->with('success', 'Access Denied you are not logged in.');
-        }
-
-    }
+        }    }
 }
