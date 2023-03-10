@@ -1,155 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.backend-layout')
 
-<head>
-    <meta charset="utf-8"/>
-    <title>Sign Up</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
-    <meta content="Coderthemes" name="author"/>
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
+@section('title')
+    Create Gym
+@endsection
 
-    <!-- App css -->
-    <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('assets/css/app-modern.min.css')}}" rel="stylesheet" type="text/css" id="app-style"/>
+@section('breadcrumb')
+    Create Gym
+@endsection
 
-</head>
-
-<body class="loading authentication-bg" data-layout-config='{"darkMode":false}'>
-<div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xxl-4 col-lg-5">
-                <div class="card">
-
-                    <!-- Logo -->
-                    <div class="card-header pt-4 pb-4 text-center bg-primary">
-                        <a href="#">
-                            <span><img class="img-responsive" src="{{asset('assets/images/logo.png')}}" alt="" height="18" style="width: 100px;height: 70px"></span>
-                        </a>
-                    </div>
-
-                    <div class="card-body p-4">
+@section('content')
 
 
-                        <div class="text-center w-75 m-auto">
-                            <h4 class="text-dark-50 text-center mt-0 fw-bold">Gym Data</h4>
-                        </div>
+    @if(session()->has('success'))
 
-                        <form method="post" action="{{ route('createGym')}}" autocomplete="off"
-                              enctype="multipart/form-data">
-                            @csrf
+        <div class="alert alert-success" role="alert">
+            <strong>Success - </strong> {{session('success')}}
 
-                            <label class="form-label">Gym Id:</label>
-
-                            <input class="form-control" type="text" readonly value="{{$id+1}}" name="gym_id">
-                            <br>
-
-                            {{--                            <input class="form-control" type="text" readonly value="1" name="gym_id">--}}
-
-                            <div class="mb-3">
-                                <label class="form-label">Gym Name</label>
-                                <input class="form-control" type="text" required=""
-                                       placeholder="Enter  Gym Name" name="gym_name">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Gym Logo</label>
-                                <input class="form-control" type="file"
-                                       placeholder="Gym Logo" name="gym_logo">
-                            </div>
-
-                            <label class="form-label">Gender</label>
-
-
-                            <div class="mb-3">
-                                <label class="form-label">Gym package</label>
-                                <select class="form-select mb-3" name="gym_package" required>
-                                    <option selected value="">Select package</option>
-                                    <option value="free">Free</option>
-                                    <option value="paid">Paid</option>
-
-                                </select>
-
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Package start</label>
-                                <input class="form-control" type="date"
-                                       placeholder="Gym package start date" name="gym_package_start_date">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Package end</label>
-                                <input class="form-control" type="date"
-                                       placeholder="Gym package end date" name="gym_package_end_date">
-                            </div>
-                            <hr>
-                            <div class="text-center w-75 m-auto">
-                                <h4 class="text-dark-50 text-center mt-0 fw-bold">User Data</h4>
-                            </div>
-                            <hr>
-                            <div class="mb-3">
-                                <label class="form-label">User Name</label>
-                                <input class="form-control" type="text" required=""
-                                       placeholder="Enter your User Name" name="name">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input class="form-control" type="email" required=""
-                                       placeholder="User email" name="email">
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Phone</label>
-                                <input class="form-control" type="number" required=""
-                                       placeholder="User phone" name="phone">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">password</label>
-                                <input class="form-control" type="password"
-                                       placeholder="User password" name="password">
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label class="form-label">Type</label>
-                                <input class="form-control" type="text"
-                                       placeholder="User Type" name="type" value="owner" readonly>
-                            </div>
-
-                            <input name="belong_to_gym" hidden>
-
-                            <hr>
-                            <div class="mb-3 mb-0 text-center">
-                                <button class="btn btn-primary" type="submit"> Sign Up</button>
-                            </div>
-
-                        </form>
-                    </div> <!-- end card-body -->
-                </div>
-                <!-- end card -->
-
-
-                <!-- end row -->
-
-            </div> <!-- end col -->
         </div>
-        <!-- end row -->
-    </div>
-    <!-- end container -->
-</div>
-<!-- end page -->
+    @endif
 
-<footer class="footer footer-alt">
-    <script>document.write(new Date().getFullYear())</script>
-    © Fitness Zone
-</footer>
+    <form method="post" action="{{ route('createGym')}}" autocomplete="off"
+          enctype="multipart/form-data">
+        @csrf
 
-<!-- bundle -->
-<script src="{{asset('assets/js/vendor.min.js')}}"></script>
-<script src="{{asset('assets/js/app.min.js')}}"></script>
+        <label class="form-label">Gym Id:</label>
 
-</body>
+        <input class="form-control" type="text" readonly value="{{$id+1}}" name="gym_id">
+        <br>
 
-</html>
+        {{--                            <input class="form-control" type="text" readonly value="1" name="gym_id">--}}
+
+        <div class="mb-3">
+            <label class="form-label">Gym Name</label>
+            <input class="form-control" type="text" required=""
+                   placeholder="Enter  Gym Name" name="gym_name">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Gym Logo</label>
+            <input class="form-control" type="file"
+                   placeholder="Gym Logo" name="gym_logo">
+        </div>
+
+        <label class="form-label">Gender</label>
+
+
+        <div class="mb-3">
+            <label class="form-label">Gym package</label>
+            <select class="form-select mb-3" name="gym_package" required>
+                <option selected value="">Select package</option>
+                <option value="free">Free</option>
+                <option value="paid">Paid</option>
+
+            </select>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Package start</label>
+            <input class="form-control" type="date"
+                   placeholder="Gym package start date" name="gym_package_start_date">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Package end</label>
+            <input class="form-control" type="date"
+                   placeholder="Gym package end date" name="gym_package_end_date">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gym City</label>
+            <select class="form-select mb-3" name="gym_city" required>
+                <option selected value="">Select city</option>
+                <option value="lahore">Lahore</option>
+
+            </select>
+
+            <input type="text" name="gym_title" hidden>
+            <input type="text" name="gym_slug" hidden>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gym Area</label>
+            <select class="form-select mb-3" name="gym_area" required>
+                <option selected value="">Select Area</option>
+                <option value="garhiShahu">Garhi Shahu</option>
+            </select>
+        </div>
+        <hr>
+        <div class="text-center w-75 m-auto">
+            <h4 class="text-dark-50 text-center mt-0 fw-bold">User Data</h4>
+        </div>
+        <hr>
+        <div class="mb-3">
+            <label class="form-label">User Name</label>
+            <input class="form-control" type="text" required=""
+                   placeholder="Enter your User Name" name="name">
+        </div>
+
+        {{--                            <div class="mb-3">--}}
+        {{--                                <label class="form-label">Email</label>--}}
+        {{--                                <input class="form-control" type="email" required=""--}}
+        {{--                                       placeholder="User email" name="email">--}}
+        {{--                            </div>--}}
+
+        <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input class="form-control" type="number" required=""
+                   placeholder="User phone" name="phone">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">password</label>
+            <input class="form-control" type="password"
+                   placeholder="User password" name="password">
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Type</label>
+            <input class="form-control" type="text"
+                   placeholder="User Type" name="type" value="owner" readonly>
+        </div>
+
+        <input name="belong_to_gym" hidden>
+
+        <hr>
+        <div class="mb-3 mb-0 text-center">
+            <button class="btn btn-primary" type="submit"> Sign Up</button>
+        </div>
+
+    </form>
+
+
+@endsection

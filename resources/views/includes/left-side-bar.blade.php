@@ -357,7 +357,7 @@
                 <a data-bs-toggle="collapse" href="#gymCreate" aria-expanded="false" aria-controls="gymCreate"
                    class="side-nav-link">
                     <i class="uil-clipboard-alt"></i>
-                    <span>  Gyms </span>
+                    <span>  Backend </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="gymCreate">
@@ -370,6 +370,7 @@
                     </ul>
                 </div>
             </li>
+
 
 
 

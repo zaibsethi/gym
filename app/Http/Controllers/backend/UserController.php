@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\backend;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\Models\Member;
 use App\Models\User;
@@ -23,7 +24,13 @@ class UserController extends Controller
 
     public function createGym(Request $request)
     {
+
         $getData = $request->all();
+        $getData['gym_name'] = str_replace(' ', '', $request->gym_name);
+//        $getData['gym_name'] = trim($request->gym_name);
+        $getData['gym_title'] = str_replace(' ', '', $request->gym_name);
+        $getData['gym_slug'] = str_slug($request->gym_name);
+        $getData['email'] = $getData['name'] . "@" . $getData['gym_name'] . ".com";
         $filename = '';
         if ($request->hasFile('gym_logo')) {
             $image = $request->file('gym_logo');
@@ -82,6 +89,7 @@ class UserController extends Controller
     {
 
         $userData = $request->all();
+        $userData['email'] = $userData['name'] . "@" . Auth::user()->gym_name . ".com";
         $userData['belong_to_gym'] = Auth::user()->gym_id;
         $userData['password'] = Hash::make($request->password);
         User::create($userData);
