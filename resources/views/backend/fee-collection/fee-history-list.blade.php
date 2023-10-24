@@ -80,9 +80,7 @@
                                             <input value="{{$receivedVar =  Carbon\Carbon::parse($receivedDate)->format('Y-m-d')}}
                                             "
                                             hidden>
-
                                             {{$receivedVar}}</td>
-                                        </td>
 
                                     </tr>
                                 @endforeach                                </tbody>
@@ -96,10 +94,5 @@
             </div> <!-- end card -->
         </div><!-- end col-->
     </div>
-
-
-
-
-
 
 @endsection

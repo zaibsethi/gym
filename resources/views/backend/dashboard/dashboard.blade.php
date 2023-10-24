@@ -13,12 +13,12 @@
 
 @section('content')
 
-{{--    <form method="post" action="{{route('sendSms')}}" enctype="multipart/form-data">--}}
-{{--        @csrf--}}
-{{--        <input name="number" type="number" required>--}}
-{{--        <input name="message" type="text" required>--}}
-{{--        <button type="submit" class="btn btn-primary">Send</button>--}}
-{{--    </form>--}}
+    {{--    <form method="post" action="{{route('sendSms')}}" enctype="multipart/form-data">--}}
+    {{--        @csrf--}}
+    {{--        <input name="number" type="number" required>--}}
+    {{--        <input name="message" type="text" required>--}}
+    {{--        <button type="submit" class="btn btn-primary">Send</button>--}}
+    {{--    </form>--}}
 
     @if(\Illuminate\Support\Facades\Auth::user()->type == 'owner')
         {{-- Auto refresh laravel page--}}

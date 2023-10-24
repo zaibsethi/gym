@@ -22,6 +22,7 @@ class MemberSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
             $member = new Member();
 
+            $member->belong_to_gym = 2;
             $member->member_name = $faker->name;
             $member->member_phone = $faker->phoneNumber;
             $member->member_gender = 'M';
@@ -44,7 +45,7 @@ class MemberSeeder extends Seeder
             $member->member_pemc = "none";
             $member->created_at = now()->format('Y-m-d');
             $member->updated_at = now()->format('Y-m-d');
-            $member->gym_id = 1;
+//            $member->gym_id = 1;
             $member->save();
         }
 //

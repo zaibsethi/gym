@@ -10,12 +10,20 @@
 
 @section('content')
 
-
     @if(session()->has('success'))
 
         <div class="alert alert-success" role="alert">
             <strong>Success - </strong> {{session('success')}}
 
+        </div>
+    @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
     @endif
 
@@ -24,7 +32,6 @@
         @csrf
 
 
-        <input type="hidden" name="belong_to_gym">
         <div class="mb-3">
             <label class="form-label">User Name</label>
             <input class="form-control" type="text" required=""
@@ -34,7 +41,7 @@
         <div class="mb-3">
             <label class="form-label">Email</label>
             <input class="form-control" type="email" required=""
-                   placeholder="User email" name="email" value="{{$userData->email}}">
+                   placeholder="User email" name="email" value="{{$userData->email}}" readonly>
         </div>
         <div class="mb-3">
             <label class="form-label">Phone</label>
@@ -49,15 +56,12 @@
         <div class="mb-3">
             <label class="form-label">User picture</label>
             <input class="form-control" type="file"
-                   placeholder="Gym Logo" name="image">
+                   placeholder="Gym Logo" name="image" >
         </div>
         <div class="mb-3">
             <label class="form-label">Type</label>
             <input class="form-control" value="{{$userData->type}}" readonly>
         </div>
-
-        <input hidden name="belong_to_gym">
-
 
         <hr>
         <div class="mb-3 mb-0 text-center">
@@ -65,6 +69,5 @@
         </div>
 
     </form>
-
 
 @endsection

@@ -19,17 +19,14 @@ class EmployeePackageController extends Controller
     {
         $getPackageRequestData = $request->all();
         $getPackageRequestData['belong_to_gym'] = Auth::user()->belong_to_gym;
-
         EmployeePackage::create($getPackageRequestData);
         return redirect(route('addEmployeePackage'))->with('success', 'Package created successfully.');
     }
 
     public function employeePackagesList()
     {
-
         $packageData=  EmployeePackage::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
         return view('backend.employee-package.employee-packages-list', compact('packageData'));
-
     }
 
     public function editEmployeePackage($id)
@@ -42,7 +39,6 @@ class EmployeePackageController extends Controller
     {
         $getPackageRequestData = $request->all();
         $id->update($getPackageRequestData);
-
         return redirect(route('employeePackagesList'))->with('success', 'Package updated successfully.');
     }
 }

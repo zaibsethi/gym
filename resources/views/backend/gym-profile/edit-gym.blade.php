@@ -1,3 +1,144 @@
+@extends('layouts.backend-layout')
+
+@section('title')
+    Edit Gym
+@endsection
+
+@section('breadcrumb')
+    Edit Gym
+@endsection
+
+@section('content')
+
+    @if(session()->has('success'))
+
+        <div class="alert alert-success" role="alert">
+            <strong>Success - </strong> {{session('success')}}
+
+        </div>
+    @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <form method="post" action="{{ route('updateGym',['id'=>$userData->id])}}" autocomplete="off"
+          enctype="multipart/form-data">
+        @csrf
+
+        <label class="form-label">Gym Id:</label>
+
+        <input class="form-control" type="text" readonly value="{{$userData->gym_id}}" name="gym_id">
+        <br>
+        {{-- <input class="form-control" type="text" readonly value="1" name="gym_id">--}}
+        <div class="mb-3">
+            <label class="form-label">Gym Name</label>
+            <input class="form-control" type="text" required=""
+                   placeholder="Enter  Gym Name" name="gym_name" value="{{$userData->gym_name}}">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Gym Logo</label>
+            <input class="form-control" type="file"
+                   placeholder="Gym Logo" name="gym_logo" value="{{$userData->gym_logo}}">
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Gym package</label>
+            <select class="form-select mb-3" name="gym_package" required>
+                <option selected value="{{$userData->gym_package}}">{{$userData->gym_package}}</option>
+                <option value="free">Free</option>
+                <option value="paid">Paid</option>
+
+            </select>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Package start</label>
+            <input class="form-control" type="date"
+                   placeholder="Gym package start date" name="gym_package_start_date"
+                   value="{{$userData->gym_package_start_date}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Package end</label>
+            <input class="form-control" type="date"
+                   placeholder="Gym package end date" name="gym_package_end_date"
+                   value="{{$userData->gym_package_end_date}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gym City</label>
+            <select class="form-select mb-3" name="gym_city" required>
+                <option selected value="{{$userData->gym_city}}">{{$userData->gym_city}}</option>
+                <option value="lahore">Lahore</option>
+
+            </select>
+
+            <input type="text" name="gym_title" hidden>
+            <input type="text" name="gym_slug" hidden>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gym Area</label>
+            <select class="form-select mb-3" name="gym_area" required>
+                <option selected value="{{$userData->gym_area}}">{{$userData->gym_area}}</option>
+                <option value="garhiShahu">Garhi Shahu</option>
+            </select>
+        </div>
+        <hr>
+        <div class="text-center w-75 m-auto">
+            <h4 class="text-dark-50 text-center mt-0 fw-bold">User Data</h4>
+        </div>
+        <hr>
+        <div class="mb-3">
+            <label class="form-label">User Name</label>
+            <input class="form-control" type="text" required=""
+                   placeholder="Enter your User Name" name="name" value="{{$userData->name}}">
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input class="form-control" type="number" required=""
+                   placeholder="User phone" name="phone" value="{{$userData->phone}}">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">password</label>
+            <input class="form-control" type="password"
+                   placeholder="User password" name="password" value="{{$userData->password}}">
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Type</label>
+            <input class="form-control" type="text"
+                   placeholder="User Type" name="type" value="{{$userData->type}}" readonly>
+        </div>
+
+        <hr>
+        <div class="mb-3 mb-0 text-center">
+            <button class="btn btn-primary" type="submit"> Update</button>
+        </div>
+
+    </form>
+
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
 {{--<!DOCTYPE html>--}}
 {{--<html lang="en">--}}
 

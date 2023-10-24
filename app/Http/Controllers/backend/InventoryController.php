@@ -18,7 +18,6 @@ class InventoryController extends Controller
     {
         $inventoryData = $request->all();
         $inventoryData['belong_to_gym'] = Auth::user()->belong_to_gym;
-
         Inventory::create($inventoryData);
         return redirect(route('addInventory'))->with('success', 'Inventory Added successfully.');
     }

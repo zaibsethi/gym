@@ -17,18 +17,12 @@ class FeeCollectionController extends Controller
     public function addFee()
 
     {
-//        member and package get send from db for fee
-        $memberData = DB::table("members")->select('*')->cursor();
-
-//        $memberData = Member::all();
-
+//      member and package get send from db for fee
+//        $memberData = DB::table("members")->select('*')->cursor();
+        $memberData = Member::where('belong_to_gym',Auth::user()->belong_to_gym)->get();
         $packageData = Package::all();
-        $memberAttandance = MemberAttendance::all();
-
-//        $memberAttandance = MemberAttendance::where('created_at')->latest()->first();
-
-
-        return view('backend.fee-collection.add-feeCollection', compact('memberData', 'packageData', 'memberAttandance'));
+        $memberAttendance = MemberAttendance::all();
+        return view('backend.fee-collection.add-feeCollection', compact('memberData', 'packageData', 'memberAttendance'));
     }
 
     public function createFee(Member $id, Request $request)
@@ -38,7 +32,6 @@ class FeeCollectionController extends Controller
         $addDaysFee = Carbon::parse($request->member_fee_end_date)->addMonth(1)->format('Y-m-d');
         $id->update(['member_fee_end_date' => $addDaysFee]);;
         $feeData['belong_to_gym'] = Auth::user()->belong_to_gym;
-
         FeeCollection::create($feeData);
         return redirect(route('addFee'))->with('success', 'Fee collected successfully.');
     }

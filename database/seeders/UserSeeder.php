@@ -23,7 +23,14 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('12345'),
                 'type' => 'developer',
 
-            ]
+            ], [
+                'name' => 'zaib',
+                'email' => 'zaib@fzone.com',
+                'password' => Hash::make('12345'),
+                'type' => 'owner',
+                'gym_id' => 1,
+
+            ],
 //            [
 //                'name' => 'Zaib',
 //                'email' => 'zaib@fitnesszone.com',

@@ -4,13 +4,26 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateExpenseRequest;
+use App\Jobs\SendMessage;
 use App\Models\Expense;
+use App\Models\Member;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class ExpenseController extends Controller
 {
     public function addExpense()
     {
+//        // Assuming you have an array of member IDs or you can retrieve them from the database
+//        $memberIds = Member::all();  // Replace with actual member IDs
+//
+//        $delay = Carbon::now()->addSeconds(10);
+//
+//        foreach ($memberIds as $memberId) {
+//            dispatch((new SendMessage($memberId->id))->delay($delay));
+//            $delay = $delay->addMinutes(1);  // Increase delay for each message
+//        }
+
         return view('backend.expense.add-expense');
     }
 

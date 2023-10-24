@@ -63,7 +63,7 @@
             </div>
         </div>
         <input name="belong_to_gym" hidden>
-        <button class="btn btn-primary" type="submit">Add Salary</button>
+        <button class="btn btn-primary" type="submit">Add Package</button>
     </form>
 
 

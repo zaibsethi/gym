@@ -63,5 +63,4 @@
         <button class="btn btn-primary" type="submit">Update Package</button>
     </form>
 
-
 @endsection

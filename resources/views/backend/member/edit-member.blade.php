@@ -151,9 +151,10 @@
                             <option value="">Select trainer</option>
 
                             @foreach($getEmployeeData as $getEmployeeDataVar)
-                                @if ($memberDataByID->trainer != null) //  !$memberDataByID->trainer
-                                <option
-                                    value="{{$getEmployeeDataVar->employee_name}}">{{$getEmployeeDataVar->employee_name}}</option>
+                                @if ($memberDataByID->trainer != null)
+                                    //  !$memberDataByID->trainer
+                                    <option
+                                        value="{{$getEmployeeDataVar->employee_name}}">{{$getEmployeeDataVar->employee_name}}</option>
                                 @endif
 
                                 <option
@@ -212,8 +213,7 @@
                                     value="{{$memberDataByID->member_package}}">{{$memberDataByID->member_package}}</option>
                             @foreach($getPackageData as $getPackageDataVar)
                                 <option
-                                    value="{{$getPackageDataVar->package_name}}">{{$getPackageDataVar->package_name}}</option>
-
+                                    value="{{$getPackageDataVar->package_amount}}">{{$getPackageDataVar->package_name}}</option>
                             @endforeach
 
                         </select>

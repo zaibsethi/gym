@@ -10,12 +10,20 @@
 
 @section('content')
 
-
     @if(session()->has('success'))
 
         <div class="alert alert-success" role="alert">
             <strong>Success - </strong> {{session('success')}}
 
+        </div>
+    @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
     @endif
 
@@ -25,24 +33,19 @@
 
         <label class="form-label">Gym Id:</label>
 
-        <input class="form-control" type="text" readonly value="{{$id+1}}" name="gym_id">
+        <input class="form-control" type="text" readonly value="{{$id+1}}" name="gym_id" required>
         <br>
-
-        {{--                            <input class="form-control" type="text" readonly value="1" name="gym_id">--}}
-
         <div class="mb-3">
             <label class="form-label">Gym Name</label>
-            <input class="form-control" type="text" required=""
-                   placeholder="Enter  Gym Name" name="gym_name">
+            <input class="form-control" type="text"
+                   placeholder="Enter Gym Name" name="gym_name" required>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Gym Logo</label>
             <input class="form-control" type="file"
-                   placeholder="Gym Logo" name="gym_logo">
+                   placeholder="Gym Logo" name="gym_logo" required>
         </div>
-
-        <label class="form-label">Gender</label>
 
 
         <div class="mb-3">
@@ -58,12 +61,12 @@
         <div class="mb-3">
             <label class="form-label">Package start</label>
             <input class="form-control" type="date"
-                   placeholder="Gym package start date" name="gym_package_start_date">
+                   placeholder="Gym package start date" name="gym_package_start_date" required>
         </div>
         <div class="mb-3">
             <label class="form-label">Package end</label>
             <input class="form-control" type="date"
-                   placeholder="Gym package end date" name="gym_package_end_date">
+                   placeholder="Gym package end date" name="gym_package_end_date" required>
         </div>
         <div class="mb-3">
             <label class="form-label">Gym City</label>
@@ -90,25 +93,19 @@
         <hr>
         <div class="mb-3">
             <label class="form-label">User Name</label>
-            <input class="form-control" type="text" required=""
-                   placeholder="Enter your User Name" name="name">
+            <input class="form-control" type="text"
+                   placeholder="Enter your User Name" name="name" required>
         </div>
-
-        {{--                            <div class="mb-3">--}}
-        {{--                                <label class="form-label">Email</label>--}}
-        {{--                                <input class="form-control" type="email" required=""--}}
-        {{--                                       placeholder="User email" name="email">--}}
-        {{--                            </div>--}}
 
         <div class="mb-3">
             <label class="form-label">Phone</label>
-            <input class="form-control" type="number" required=""
-                   placeholder="User phone" name="phone">
+            <input class="form-control" type="number"
+                   placeholder="User phone" name="phone" required>
         </div>
         <div class="mb-3">
             <label class="form-label">password</label>
             <input class="form-control" type="password"
-                   placeholder="User password" name="password">
+                   placeholder="User password" name="password" required>
         </div>
 
 
@@ -126,6 +123,5 @@
         </div>
 
     </form>
-
 
 @endsection

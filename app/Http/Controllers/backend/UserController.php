@@ -26,11 +26,15 @@ class UserController extends Controller
     {
 
         $getData = $request->all();
+        // Remove free space
         $getData['gym_name'] = str_replace(' ', '', $request->gym_name);
-//        $getData['gym_name'] = trim($request->gym_name);
+        // $getData['gym_name'] = trim($request->gym_name);
         $getData['gym_title'] = str_replace(' ', '', $request->gym_name);
+        // Add slug
         $getData['gym_slug'] = str_slug($request->gym_name);
-        $getData['email'] = $getData['name'] . "@" . $getData['gym_name'] . ".com";
+        //split name into array and use first name
+        $firstName = explode(' ', $getData['name'], 2)[0];
+        $getData['email'] = strtolower($firstName . "@" . $getData['gym_name'] . ".com");
         $filename = '';
         if ($request->hasFile('gym_logo')) {
             $image = $request->file('gym_logo');
@@ -62,18 +66,51 @@ class UserController extends Controller
 
     }
 
-    public function editGym($gym_id)
+    public function editGym($id)
     {
-        $requestUserData = User::all();
+        $userData = User::where('gym_id', $id)->first();
 
-        foreach ($requestUserData as $requestUserDataVar) {
-            if ($requestUserDataVar->gym_id == $gym_id) {
-                $userData = User::find($requestUserDataVar->id);
-                return view('backend.gym-profile.edit-gym', compact('userData'));
-            }
+        return view('backend.gym-profile.edit-gym', compact('userData'));
+
+    }
+
+    public function updateGym(Request $request, User $id)
+    {
+        $getData = $request->all();
+        // Remove free space
+        $getData['gym_name'] = str_replace(' ', '', $request->gym_name);
+        // $getData['gym_name'] = trim($request->gym_name);
+        $getData['gym_title'] = str_replace(' ', '', $request->gym_name);
+        // Add slug
+        $getData['gym_slug'] = str_slug($request->gym_name);
+        //split name into array and use first name
+        $firstName = explode(' ', $getData['name'], 2)[0];
+        $getData['email'] = strtolower($firstName . "@" . $getData['gym_name'] . ".com");
+        $filename = '';
+        if ($request->hasFile('gym_logo')) {
+            $image = $request->file('gym_logo');
+            $path = public_path() . '/backend/images/gym/profile/';
+            $filename = time() . $image->getClientOriginalName();
+            $image->move($path, $filename);
+            $request->gym_logo = $filename;
         }
 
+        $getData['password'] = Hash::make($request->password);
+        $getData['belong_to_gym'] = $request->gym_id;
 
+//        if ($request->gym_logo != null) {
+//            $getData->gym_logo = $filename;
+//            $getData->save();
+//        }
+
+
+        $id->update($getData);
+        if ($request->gym_logo != null) {
+            $id->gym_logo = $filename;
+            $id->save();
+        }
+
+        return redirect(route('gymList'))->with("success", 'Gym updated successfully.');
     }
 
     public
@@ -87,22 +124,27 @@ class UserController extends Controller
     public
     function createUser(Request $request)
     {
-
         $userData = $request->all();
-        $userData['email'] = $userData['name'] . "@" . Auth::user()->gym_name . ".com";
+        //split name into array and use first name
+        $firstName = explode(' ', $userData['name'], 2)[0];
+        //lower letter the  mail
+        $userData['email'] = strtolower($firstName . "@" . Auth::user()->gym_name . ".com");
         $userData['belong_to_gym'] = Auth::user()->gym_id;
         $userData['password'] = Hash::make($request->password);
         User::create($userData);
         return redirect(route('addUser'))->with('success', "user Created.");
     }
 
-    public
-    function userList()
+    public function userList()
     {
-        $usersData = User::where('gym_id', Auth::user()->gym_id)->OrWhere('belong_to_gym', Auth::user()->gym_id)->get();
+        // Get users with the same gym_id or belong_to_gym as the authenticated user's gym_id
+        $usersData = User::where('gym_id', Auth::user()->gym_id)
+            ->orWhere('belong_to_gym', Auth::user()->gym_id)
+            ->get();
 
         return view('backend.user-profile.users-list', compact('usersData'));
     }
+
 
     public
     function editUser($id)
@@ -114,55 +156,48 @@ class UserController extends Controller
 
     }
 
-    public
-    function updateUser(Request $request, User $id)
+    public function updateUser(Request $request, User $id)
     {
-
         $userData = $request->all();
+        // Hash the password
+        $userData['password'] = Hash::make($request->password);
+        //split name into array and use first name
+        $firstName = explode(' ', $request->name, 2)[0];
+        //lower letter the  mail
+        $userData['email'] = strtolower($firstName . "@" . Auth::user()->gym_name . ".com");
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $path = public_path() . '/backend/images/user/profile/';
+            $filename = time() . $image->getClientOriginalName();
+            $image->move($path, $filename);
+            $request->image = $filename;
 
-        if (Auth::user()->type == 'owner') {
-            $userData['belong_to_gym'] = '';
-            $userData['password'] = Hash::make($request->password);
-        } else {
-            $userData['belong_to_gym'] = Auth::user()->gym_id;
-            $userData['password'] = Hash::make($request->password);
-        }
-        // update member image
-        if ($request->image != '') {
-            $filename = '';
-            if ($request->hasFile('image')) {
-                $image = $request->file('image');
-                $path = public_path() . '/backend/images/user/profile/';
-                $filename = time() . $image->getClientOriginalName();
-                $image->move($path, $filename);
-                $request->image = $filename;
-                $image_path = "/backend/images/user/profile/";  // Value is not URL but directory file path
-//               start: unlink old image
-                if ($id->image != null) {
-                    $oldImage = '/backend/images/user/profile/' . $id->image;
-                    $oldImagePath = str_replace('\\', '/', public_path());
-                    unlink($oldImagePath . $oldImage);
+
+            // Unlink old image if it exists
+            if ($id->image) {
+                $oldImagePath = public_path() . '/backend/images/user/profile/' . $id->image;
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
                 }
-//               end: unlink old image
-
             }
-            $userData['password'] = bcrypt($request->password);
-            $id->update($userData);
+
+            $userData['image'] = $filename;
+        }
+
+        // Set 'belong_to_gym' based on user type
+        $userData['belong_to_gym'] = Auth::user()->gym_id;
+
+
+        // Update the user
+        $id->update($userData);
+        if ($request->image != null) {
             $id->image = $filename;
             $id->save();
-
-
         }
-
-        if ($request->image == '' || $request->image == null) {
-
-            $userData['password'] = bcrypt($request->password);
-            $id->update($userData);
-
-        }
-
-//        return back()->with('success', 'Member info Updated.');
-
+        // Redirect with success message
         return redirect()->route('userList')->with('success', 'User info Updated.');
     }
+
+
 }
+

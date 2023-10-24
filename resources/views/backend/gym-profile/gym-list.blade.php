@@ -11,6 +11,15 @@
 @endsection
 
 @section('content')
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="row">
         <div class="col-12">
 
@@ -84,10 +93,9 @@
 
                                         @if(\Illuminate\Support\Facades\Auth::user()->type == "developer")
                                             <td>
-                                                {{--                                                <a href="{{route('editGym',['gym_id'=>$gymDataVar->gym_id])}}"--}}
-                                                {{--                                                   class="action-icon"> <i class="mdi mdi-pencil"></i></a>--}}
+                                                                                                <a href="{{route('editGym',['id'=>$gymDataVar->gym_id])}}"
+                                                                                                   class="action-icon"> <i class="mdi mdi-pencil"></i></a>
 
-                                                {{"edit"}}
                                             </td>
                                         @endif
                                     </tr>

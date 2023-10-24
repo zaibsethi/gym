@@ -28,9 +28,7 @@
                                 <tr>
                                     <th>Member ID</th>
                                     <th>Name</th>
-                                    {{--                                    <th>phone</th>--}}
                                     <th>fee date</th>
-
                                     <th>Package Amount</th>
                                     <th>Collect Fee</th>
                                     <th>Fee History</th>
@@ -65,31 +63,16 @@
 
                                         <tr>
                                             <td>{{$memberDataVar->id}}</td>
-
-
                                             <td>{{$memberDataVar->member_name}}</td>
-                                            {{--                                            <td>{{$memberDataVar->member_phone}}</td>--}}
                                             <td>
-                                                {{--                                            get member_fee_end_date with time and convert into only date--}}
-
-
                                                 {{Carbon\Carbon::parse($memberDataVar->member_fee_end_date)->format('Y-m-d')}}
-
                                                 <br>
-
-                                                {{--         get member_fee_end_date and  compare with current date with 30days difference for updating member fee date--}}
+                                                {{--  get member_fee_end_date and  compare with current date with 30days difference for updating member fee date--}}
                                                 <input
                                                     value="{{$currentDate =Carbon\Carbon::parse(now()->format('Y-m-d'))}}"
                                                     hidden> <input
                                                     value="{{$endtDate =Carbon\Carbon::parse($memberDataVar->member_fee_end_date)->addDays(10)}}"
                                                     hidden>
-                                                {{--                                            <input--}}
-                                                {{--                                                value="{{$endtDate =Carbon\Carbon::parse($memberDataVar->member_fee_end_date)}}"--}}
-                                                {{--                                                hidden>--}}
-
-                                                {{--                                            <input value="{{$diff_in_days=$currentDate->diffInDays($endtDate)}}" hidden>--}}
-                                                {{--                                            {{dd($diff_in_days < 30)}}--}}
-
                                                 @if($endtDate <= $currentDate)
                                                     <button type="button" class="btn btn-danger"
                                                             data-bs-toggle="modal"
@@ -113,7 +96,6 @@
                                                                                 src="{{ asset('backend/images/black_member_profile_picture.jpg') }}">
                                                                         @else
                                                                             {{--        if getting pic from database--}}
-
                                                                             <img
                                                                                 class="img-responsive  img-thumbnail"
                                                                                 style="height: 120px; width: 120px"

@@ -71,6 +71,23 @@
                 </div>
             </li>
             <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#gymMemberAttendance" aria-expanded="false"
+                   aria-controls="gymMembers"
+                   class="side-nav-link">
+                    <i class="uil-clipboard-alt"></i>
+                    <span>Member  Attendance  </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="gymMemberAttendance">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{route('addAttendance')}}">Mark Attendance</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
+            <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#gymMemberFee" aria-expanded="false" aria-controls="gymMembers"
                    class="side-nav-link">
                     <i class="uil-atm-card"></i>
@@ -108,48 +125,7 @@
                 </div>
             </li>
         @endif
-        @if(\Illuminate\Support\Facades\Auth::user()->type != 'trainer' && \Illuminate\Support\Facades\Auth::user()->type != 'developer')
 
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#gymMemberAttendance" aria-expanded="false"
-                   aria-controls="gymMembers"
-                   class="side-nav-link">
-                    <i class="uil-clipboard-alt"></i>
-                    <span>Member  Attendance  </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="gymMemberAttendance">
-                    <ul class="side-nav-second-level">
-                        <li>
-
-                            <a href="{{route('addAttendance')}}">Mark Attendance</a>
-                            <a href="{{route('addAttendanceById')}}">Mark Attendance By Id</a>
-
-                        </li>
-
-                    </ul>
-                </div>
-            </li>
-            {{--   Pages  Access  Only to Owner --}}
-            {{--        @if(\Illuminate\Support\Facades\Auth::user() == 'owner')--}}
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#employeeAttendance" aria-expanded="false" aria-controls="gymMembers"
-                   class="side-nav-link">
-                    <i class="uil-clipboard-alt"></i>
-                    <span>  Employee Attendance </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="employeeAttendance">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{route('addEmployeeAttendance')}}">Mark Employee Attendance</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </li>
-        @endif
         @if(\Illuminate\Support\Facades\Auth::user()->type == 'owner')
             <li class="side-nav-title side-nav-item">Gym Inventory</li>
 
@@ -311,24 +287,43 @@
             {{--                </div>--}}
             {{--            </li>--}}
 
-            {{--            <li class="side-nav-title side-nav-item">Manage Task</li>--}}
-            {{--            <li class="side-nav-item">--}}
-            {{--                <a data-bs-toggle="collapse" href="#task" aria-expanded="false" aria-controls="gymMembers"--}}
-            {{--                   class="side-nav-link">--}}
-            {{--                    <i class="uil-clipboard-alt"></i>--}}
-            {{--                    <span>  Manage Task </span>--}}
-            {{--                    <span class="menu-arrow"></span>--}}
-            {{--                </a>--}}
-            {{--                <div class="collapse" id="task">--}}
-            {{--                    <ul class="side-nav-second-level">--}}
-            {{--                        <li>--}}
-            {{--                            <a href="{{route('addTask')}}">Add Task</a>--}}
-            {{--                            <a href="{{route('taskList')}}">Task List</a>--}}
-            {{--                        </li>--}}
+{{--                        <li class="side-nav-title side-nav-item">Manage Task</li>--}}
+{{--                        <li class="side-nav-item">--}}
+{{--                            <a data-bs-toggle="collapse" href="#task" aria-expanded="false" aria-controls="gymMembers"--}}
+{{--                               class="side-nav-link">--}}
+{{--                                <i class="uil-clipboard-alt"></i>--}}
+{{--                                <span>  Manage Task </span>--}}
+{{--                                <span class="menu-arrow"></span>--}}
+{{--                            </a>--}}
+{{--                            <div class="collapse" id="task">--}}
+{{--                                <ul class="side-nav-second-level">--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{route('addTask')}}">Add Task</a>--}}
+{{--                                        <a href="{{route('taskList')}}">Task List</a>--}}
+{{--                                    </li>--}}
 
-            {{--                    </ul>--}}
-            {{--                </div>--}}
-            {{--            </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </li>--}}
+
+            <li class="side-nav-title side-nav-item">Manage Message</li>
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#message" aria-expanded="false" aria-controls="message"
+                   class="side-nav-link">
+                    <i class="uil-clipboard-alt"></i>
+                    <span>  Manage Message </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="message">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{route('addMessage')}}">Add Message</a>
+                            <a href="{{route('messageList')}}">Message List</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </li>
 
             <li class="side-nav-title side-nav-item">Manage User</li>
             <li class="side-nav-item">
@@ -348,7 +343,6 @@
                     </ul>
                 </div>
             </li>
-
 
         @endif
         @if(\Illuminate\Support\Facades\Auth::user()->type == 'developer')
@@ -370,9 +364,6 @@
                     </ul>
                 </div>
             </li>
-
-
-
 
         @endif
         {{--        @endif--}}

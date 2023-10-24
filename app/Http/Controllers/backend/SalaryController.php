@@ -42,7 +42,7 @@ class SalaryController extends Controller
     public function salaryHistory(Salary $id, Request $request)
     {
 
-//get id from request and send specific employee salary history
+      //get id from request and send specific employee salary history
         $salaryHistoryData = Salary::where('belong_to_gym', Auth::user()->belong_to_gym)->where('employee_id', $request->employee_id)->get();
         return view('backend.salary.salary-history-list', compact('salaryHistoryData'));
     }

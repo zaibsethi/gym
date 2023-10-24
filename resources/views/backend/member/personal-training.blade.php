@@ -46,7 +46,7 @@
                                             {{-- getting data from package table to compare with member selected package--}}
                                             @foreach($packageData as $packageDataVar)
 
-                                                @if($personalTrainingVar->member_package == $packageDataVar->id)
+                                                @if($personalTrainingVar->member_package == $packageDataVar->package_amount)
                                                     {{$packageDataVar->package_amount}}
                                                 @endif
                                             @endforeach
@@ -55,16 +55,14 @@
 
                                             @if($personalTrainingVar->trainer != null)
                                                 {{-- getting data from employee table to for personal training check --}}
-                                                {{"Personal trainer"}}
-                                                <br>
-                                                <span style="color: red">{{$personalTrainingVar->trainer}}</span>
-                                                <br>
-                                                <span>  {{$personalTrainingVar->trainer_fee}}</span>
-
+                                                {{"Personal training fee: ".$personalTrainingVar->trainer_fee}}
+                                                {{--                                                <br>--}}
+                                                {{--                                                <span style="color: red">{{$personalTrainingVar->trainer}}</span>--}}
+                                                {{--                                                <br>--}}
+                                                {{--                                                <span>  {{$personalTrainingVar->trainer_fee}}</span>--}}
 
                                             @endif
                                         </td>
-
 
 
                                     </tr>

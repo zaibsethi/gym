@@ -11,6 +11,7 @@
 @endsection
 
 @section('content')
+
     <div class="row">
         <div class="col-12">
 
@@ -20,7 +21,15 @@
                         <div class="tab-pane show active" id="alt-pagination-preview">
                             <table id="alternative-page-datatable"
                                    class="table table-striped dt-responsive nowrap w-100">
-
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <thead>
                                 <tr>
                                     <th>Package ID</th>
