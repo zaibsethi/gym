@@ -10,7 +10,7 @@
 
 @section('content')
 
-    <form method="post" action="{{route('updateMember',['id'=>$memberDataByID->id])}}" enctype="multipart/form-data"
+    <form method="post" action="{{route('updateMember',['id'=>$memberDataByID->roll_no])}}" enctype="multipart/form-data"
           class="needs-validation"
           autocomplete="off" novalidate>
         @csrf
@@ -38,7 +38,7 @@
             <div class="col-lg-6">
                 <div class="mb-3">
                     <label class="form-label">Member ID</label>
-                    <input type="text" style="color: #526be2 !important;" value="{{$memberDataByID->id}}"
+                    <input type="text" style="color: #526be2 !important;" value="{{$memberDataByID->roll_no}}"
                            class="form-control"
                            disabled>
 
@@ -213,7 +213,7 @@
                                     value="{{$memberDataByID->member_package}}">{{$memberDataByID->member_package}}</option>
                             @foreach($getPackageData as $getPackageDataVar)
                                 <option
-                                    value="{{$getPackageDataVar->package_amount}}">{{$getPackageDataVar->package_name}}</option>
+                                    value="{{$getPackageDataVar->salary_package_id}}">{{$getPackageDataVar->package_name}}</option>
                             @endforeach
 
                         </select>
@@ -253,7 +253,6 @@
                 <!-- Single Date Picker -->
                 <div class="mb-3">
                     <label class="form-label">Fee Start Date</label>
-
                     <input type="date" class="form-control"
                            id="member_fee_start_date" name="member_fee_start_date"
                            onchange="addEndDate()" value="{{$memberDataByID->member_fee_start_date}}">

@@ -10,6 +10,13 @@
 
 @section('content')
 
+    @if(session()->has('danger'))
+
+        <div class="alert alert-danger" role="alert">
+            <strong>Success - </strong> {{session('danger')}}
+
+        </div>
+    @endif
     @if(session()->has('success'))
 
         <div class="alert alert-success" role="alert">

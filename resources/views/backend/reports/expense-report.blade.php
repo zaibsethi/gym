@@ -35,7 +35,7 @@
                                 @foreach($expenseData as $expenseDataVar)
                                     <tr>
                                         <td>
-                                            {{$expenseDataVar->id}}
+                                            {{$expenseDataVar->expense_id}}
                                         </td>
                                         <td>
                                             {{$expenseDataVar->expense_title}}

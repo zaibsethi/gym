@@ -43,7 +43,7 @@
                                 @foreach($packageData as $packageDataVar)
                                     <tr>
                                         <td class="table-user">
-                                            {{$packageDataVar->id}}
+                                            {{$packageDataVar->salary_package_id}}
                                         </td>
                                         <td class="table-user">
                                             {{$packageDataVar->package_name}}
@@ -53,7 +53,7 @@
                                         <td>                {{$packageDataVar->package_description}}
                                         </td>
                                         <td class="table-action">
-                                            <a href="{{route('editEmployeePackage',['id'=>$packageDataVar->id])}}"
+                                            <a href="{{route('editEmployeePackage',['id'=>$packageDataVar->salary_package_id])}}"
                                                class="action-icon"> <i
                                                     class="mdi mdi-pencil"></i></a>
                                         </td>

@@ -54,7 +54,7 @@
             visibility: hidden;
         }
         @endif
-@yield('styles')
+        @yield('styles')
     </style>
 
 </head>
@@ -72,8 +72,8 @@
     <div class="wrapper">
 
         <!-- ========== Left Sidebar Start ========== -->
-    @include('includes.left-side-bar')
-    <!-- Left Sidebar End -->
+        @include('includes.left-side-bar')
+        <!-- Left Sidebar End -->
 
         <!-- Begin Content -->
 
@@ -97,8 +97,8 @@
             <!-- End Content -->
             <br><br>
             <!-- Footer Start -->
-        @include('includes.footer')
-        <!-- end Footer -->
+            @include('includes.footer')
+            <!-- end Footer -->
 
         </div>
         <!-- content-page -->

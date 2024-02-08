@@ -82,7 +82,7 @@
 
                                     <tr>
 
-                                        <td>{{$memberDataVar->id}}</td>
+                                        <td>{{$memberDataVar->roll_no}}</td>
 
                                         <td>{{$memberDataVar->member_name}}</td>
                                         @if(\Illuminate\Support\Facades\Auth::user()->type == 'owner')
@@ -93,7 +93,7 @@
                                         <td>
                                             @foreach($packageData as $packageDataVar)
 
-                                                @if($memberDataVar->member_package == $packageDataVar->package_amount)
+                                                @if($memberDataVar->member_package == $packageDataVar->package_id)
                                                     {{$packageDataVar->package_amount}}
                                                 @endif
                                             @endforeach
@@ -105,7 +105,7 @@
                                                 @csrf
                                                 <input name="belong_to_gym" hidden>
 
-                                                <input name="member_id" value="{{$memberDataVar->id}}" hidden>
+                                                <input name="member_id" value="{{$memberDataVar->roll_no}}" hidden>
 
                                                 <input name="member_name" value="{{$memberDataVar->member_name}}"
                                                        hidden>
@@ -155,7 +155,7 @@
                                             <form method="post" action="{{route('singleMemberAttendanceList')}}"
                                                   enctype="multipart/form-data">
                                                 @csrf
-                                                <input name="member_id" value="{{$memberDataVar->id}}" hidden>
+                                                <input name="member_id" value="{{$memberDataVar->roll_no}}" hidden>
                                                 @if(\Illuminate\Support\Facades\Auth::user()->type == "owner")
 
                                                     <button type="submit"

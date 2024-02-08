@@ -16,9 +16,13 @@ class InventoryController extends Controller
 
     public function createInventory(Request $request)
     {
+        $getInventoryData = Inventory::where('belong_to_gym', Auth::user()->belong_to_gym)->where('inventory_id', '<>', null)->count();
+
         $inventoryData = $request->all();
         $inventoryData['belong_to_gym'] = Auth::user()->belong_to_gym;
+        $inventoryData['inventory_id'] = $getInventoryData + 1;
         Inventory::create($inventoryData);
+
         return redirect(route('addInventory'))->with('success', 'Inventory Added successfully.');
     }
 
@@ -30,15 +34,18 @@ class InventoryController extends Controller
 
     public function editInventory($id)
     {
-        $inventoryData = Inventory::find($id);
+        $inventoryData = Inventory::where('belong_to_gym', Auth::user()->belong_to_gym)->where('inventory_id', $id)->first();
+
+//        $inventoryData = Inventory::find($id);
         return view('backend.inventory.edit-inventory', compact('inventoryData'));
     }
 
-    public function updateInventory(Request $request, Inventory $id)
+    public function updateInventory(Request $request, $id)
     {
+        $expenseData = Inventory::where('belong_to_gym', Auth::user()->belong_to_gym)->where('inventory_id', $id)->first();
 
         $inventoryData = $request->all();
-        $id->update($inventoryData);
+        $expenseData->update($inventoryData);
         return redirect(route('inventoryList'))->with('success', 'Inventory updated successfully.');
 
     }

@@ -1,85 +1,85 @@
-@extends('layouts.backend-layout')
+{{--@extends('layouts.backend-layout')--}}
 
 
-@section('title')
-   Mark attendance
-@endsection
+{{--@section('title')--}}
+{{--   Mark attendance--}}
+{{--@endsection--}}
 
-@section('breadcrumb')
-    Mark attendance
+{{--@section('breadcrumb')--}}
+{{--    Mark attendance--}}
 
-@endsection
+{{--@endsection--}}
 
-@section('content')
-    <div class="row">
-        <div class="col-12">
+{{--@section('content')--}}
+{{--    <div class="row">--}}
+{{--        <div class="col-12">--}}
 
-            <div class="card">
-                <div class="card-body">
-                    <div class="tab-content">
-                        @if(session()->has('success'))
-
-
-
-                            <div class="alert alert-success" role="alert">
-                                <h4 class="alert-heading"><strong>Success - </strong>{{session('success')}}</h4>
-
-                            </div>
-                        @endif
-
-                        @if(session()->has('danger'))
+{{--            <div class="card">--}}
+{{--                <div class="card-body">--}}
+{{--                    <div class="tab-content">--}}
+{{--                        @if(session()->has('success'))--}}
 
 
 
-                            <div class="alert alert-danger" role="alert">
-                                <h4 class="alert-heading"><strong>Success - </strong>{{session('danger')}}</h4>
-                            </div>
-                        @endif
+{{--                            <div class="alert alert-success" role="alert">--}}
+{{--                                <h4 class="alert-heading"><strong>Success - </strong>{{session('success')}}</h4>--}}
 
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        <div class="tab-pane show active">
-                                <h3>Attendance By ID:</h3><br>
-                                <form action="{{route('createMemberAttendanceById')}}" method="post" autocomplete="off">
-                                    @csrf
-                                    <input name="belong_to_gym" hidden>
+{{--                            </div>--}}
+{{--                        @endif--}}
 
-                                    <input type="number" class="form-control" name="member_id"><br>
-                                    <button class="btn  btn-info" type="submit">Mark Attendance</button>
-
-                                </form>
-
-                            <hr>
-
-                                <h3>Find Old Member:</h3><br>
-
-                                <form action="{{route('updateMemberFeeDate')}}" method="post" autocomplete="off">
-                                    @csrf
-                                    <input type="number" class="form-control" name="member_phone"><br>
-                                    <button class="btn  btn-info" type="submit">Find Old Member</button>
-
-                                </form>
+{{--                        @if(session()->has('danger'))--}}
 
 
-                            <!-- end preview-->
 
-                    </div> <!-- end tab-content-->
+{{--                            <div class="alert alert-danger" role="alert">--}}
+{{--                                <h4 class="alert-heading"><strong>Success - </strong>{{session('danger')}}</h4>--}}
+{{--                            </div>--}}
+{{--                        @endif--}}
 
-                </div> <!-- end card body-->
-            </div> <!-- end card -->
-        </div><!-- end col-->
-    </div>
+{{--                        @if ($errors->any())--}}
+{{--                            <div class="alert alert-danger">--}}
+{{--                                <ul>--}}
+{{--                                    @foreach ($errors->all() as $error)--}}
+{{--                                        <li>{{ $error }}</li>--}}
+{{--                                    @endforeach--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        @endif--}}
+{{--                        <div class="tab-pane show active">--}}
+{{--                                <h3>Attendance By ID:</h3><br>--}}
+{{--                                <form action="{{route('createMemberAttendanceById')}}" method="post" autocomplete="off">--}}
+{{--                                    @csrf--}}
+{{--                                    <input name="belong_to_gym" hidden>--}}
 
-    <!-- end row-->
+{{--                                    <input type="number" class="form-control" name="member_id"><br>--}}
+{{--                                    <button class="btn  btn-info" type="submit">Mark Attendance</button>--}}
 
-@endsection
+{{--                                </form>--}}
+
+{{--                            <hr>--}}
+
+{{--                                <h3>Find Old Member:</h3><br>--}}
+
+{{--                                <form action="{{route('updateMemberFeeDate')}}" method="post" autocomplete="off">--}}
+{{--                                    @csrf--}}
+{{--                                    <input type="number" class="form-control" name="member_phone"><br>--}}
+{{--                                    <button class="btn  btn-info" type="submit">Find Old Member</button>--}}
+
+{{--                                </form>--}}
+
+
+{{--                            <!-- end preview-->--}}
+
+{{--                    </div> <!-- end tab-content-->--}}
+
+{{--                </div> <!-- end card body-->--}}
+{{--            </div> <!-- end card -->--}}
+{{--        </div><!-- end col-->--}}
+{{--    </div>--}}
+
+{{--    <!-- end row-->--}}
+
+{{--@endsection--}}
 
 
 
@@ -89,9 +89,9 @@
 {{--    <title>Members List</title>--}}
 {{--    <meta charset="utf-8">--}}
 {{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
-{{--    --}}{{--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">--}}
-{{--    --}}{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--}}
-{{--    --}}{{--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>--}}
+{{--    --}}{{----}}{{--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">--}}
+{{--    --}}{{----}}{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--}}
+{{--    --}}{{----}}{{--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>--}}
 
 
 {{--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--}}

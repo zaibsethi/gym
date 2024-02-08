@@ -59,6 +59,11 @@
 
         </div>
         <div class="mb-3">
+            <label class="form-label">Message Api</label>
+            <input class="form-control" type="text"
+                   placeholder="Enter Gym api" name="message_api_key">
+        </div>
+        <div class="mb-3">
             <label class="form-label">Package start</label>
             <input class="form-control" type="date"
                    placeholder="Gym package start date" name="gym_package_start_date" required>
@@ -119,7 +124,7 @@
 
         <hr>
         <div class="mb-3 mb-0 text-center">
-            <button class="btn btn-primary" type="submit"> Sign Up</button>
+            <button class="btn btn-primary" type="submit"> Add Gym</button>
         </div>
 
     </form>

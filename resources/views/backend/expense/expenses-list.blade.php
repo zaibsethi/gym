@@ -56,7 +56,7 @@
                                 @foreach($expenseData as $expenseDataVar)
                                     <tr>
                                         <td class="table-user">
-                                            {{$expenseDataVar->id}}
+                                            {{$expenseDataVar->expense_id}}
                                         </td>
                                         <td>
                                             {{$expenseDataVar->expense_title}}
@@ -71,7 +71,7 @@
                                         <td>
                                             @if(\Illuminate\Support\Facades\Auth::user()->type == "owner")
 
-                                                <a href="{{route('editExpense',['id'=>$expenseDataVar->id])}}"
+                                                <a href="{{route('editExpense',['id'=>$expenseDataVar->expense_id])}}"
                                                    class="action-icon"> <i
                                                         class="mdi mdi-pencil"></i></a>
                                             @endif

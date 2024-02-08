@@ -20,8 +20,7 @@ class MemberAttendanceController extends Controller
 //        $memberData = Member::where('member_fee_end_date', '>', $cdate)->cursor();
 //        $memberData = DB::table('members')->orderBy('id')->where('member_fee_end_date', '>', $cdate)->skip(0)->take(1000)->get();;
         $memberData = Member::where('belong_to_gym', Auth::user()->belong_to_gym)->where('member_fee_end_date', '>', $cdate)->get();
-//        $memberData = Member::all();
-        $packageData = Package::all();
+        $packageData = Package::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
 
         return view('backend.member-attendance.add-attendance', compact('memberData', 'packageData'));
 
@@ -48,40 +47,7 @@ class MemberAttendanceController extends Controller
             return redirect(route('addAttendance'))->with('success', 'Attendance Marked. Fee Paid.');
 
         } else {
-            $gymData = User::where('belong_to_gym', Auth::user()->belong_to_gym)->where('gym_package','=', 'paid')->get();
-             if ($gymData->contains('gym_package', 'paid')) {
-                $url = "http://whatsapp247.com/api/send.php";
-                $parameters = array("api_key" => "923092018911-f5b7824d-586c-489d-95e8-881aad1edc57",
-                    "mobile" => "923044750336",
-                    "message" => "test",
-                    "priority" => "10",
-                    "type" => 1, // Set type to 1 for image
-                    "url" => "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg", // URL to your image
-                    "caption" => "This is the image caption" // Optional image caption
-                );
-
-                $ch = curl_init();
-                $timeout = 30;
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_HEADER, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $parameters);
-                curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
-                $response = curl_exec($ch);
-                curl_close($ch);
-
-                echo $response;
-
-                return redirect(route('addAttendance'))->with('danger', 'Messages send.Attendance Marked. Please Pay your fee.');
-
-            } else {
                 return redirect(route('addAttendance'))->with('danger', 'Attendance Marked. Please Pay your fee.');
-
-            }
-
 
         }
     }

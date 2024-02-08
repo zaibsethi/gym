@@ -3,7 +3,7 @@
   array (
     'name' => 'Laravel',
     'env' => 'local',
-    'debug' => true,
+    'debug' => false,
     'url' => 'http://localhost',
     'asset_url' => NULL,
     'timezone' => 'Asia/Karachi',
@@ -99,8 +99,9 @@
       ),
       'api' => 
       array (
-        'driver' => 'passport',
+        'driver' => 'token',
         'provider' => 'users',
+        'hash' => false,
       ),
       'sanctum' => 
       array (

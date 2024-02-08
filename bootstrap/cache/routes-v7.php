@@ -84,7 +84,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ab9BJ3pUERXznJHI',
+            '_route' => 'generated::oms1pZdljvsGvtos',
           ),
           1 => NULL,
           2 => 
@@ -300,13 +300,33 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/api/user' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::LBBTaD4kx38r7vTl',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/api/login' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::NAHBtiWHwtHdOC5y',
+            '_route' => 'generated::idS0AfGh1Syvt5TL',
           ),
           1 => NULL,
           2 => 
@@ -325,167 +345,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::NkXQsbzqzOhHPy7X',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/api/defaulter-members-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'generated::Kalglmamkyzt4QCQ',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/api/active-members-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'generated::RQiV8FLuz9Owdukw',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/api/new-members-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'generated::Fs3FaQW74TM1iDdJ',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/api/daily-members-fee-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'generated::phNlM0eaiNOdDRDF',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/api/night-shift-members-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'generated::0nF019Z36rDbifTf',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/api/evening-shift-members-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'generated::dBibS2HCMI95GTc6',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/api/morning-shift-members-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'generated::sYTmYQciBkD8u2pD',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/api/store-api-status-and-date' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'generated::NnOPZqd9ecXoeu8j',
+            '_route' => 'generated::vp3qHySh1DOo4dmD',
           ),
           1 => NULL,
           2 => 
@@ -852,45 +712,6 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/add-fee' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'addFee',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/fee-history' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'feeHistory',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
       '/admin/add-attendance' => 
       array (
         0 => 
@@ -1007,6 +828,279 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/add-fee' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'addFee',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/fee-history' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'feeHistory',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/add-employee-package' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'addEmployeePackage',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/create-employee-package' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'createEmployeePackage',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/employee-packages-list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'employeePackagesList',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/add-employee' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'addEmployee',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/create-employee' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'createEmployee',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/employee-list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'employeeList',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/add-employee-attendance' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'addEmployeeAttendance',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/create-employee-attendance' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'createEmployeeAttendance',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/update-employee-attendance' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'updateEmployeeAttendance',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/single-employee-attendance-list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'singleEmployeeAttendanceList',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/add-salary' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'addSalary',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/salary-history' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'salaryHistory',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin/add-inventory' => 
       array (
         0 => 
@@ -1053,65 +1147,6 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'inventoryList',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/add-task' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'addTask',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/create-task' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'createTask',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/task-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'taskList',
           ),
           1 => NULL,
           2 => 
@@ -1364,358 +1399,6 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/add-employee-package' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'addEmployeePackage',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/create-employee-package' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'createEmployeePackage',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/employee-packages-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'employeePackagesList',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/add-member-thing' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'addMemberThing',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/create-member-thing' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'createThing',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/things-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'thingsList',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/add-employee' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'addEmployee',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/create-employee' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'createEmployee',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/employee-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'employeeList',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/add-salary' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'addSalary',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/salary-history' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'salaryHistory',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/add-employee-attendance' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'addEmployeeAttendance',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/create-employee-attendance' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'createEmployeeAttendance',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/update-employee-attendance' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'updateEmployeeAttendance',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/single-employee-attendance-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'singleEmployeeAttendanceList',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/add-message' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'addMessage',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/create-message' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'createMessage',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/admin/message-list' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'messageList',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
       '/login' => 
       array (
         0 => 
@@ -1739,7 +1422,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::C7Ru2rQIYtDgfL9v',
+            '_route' => 'generated::yV601IPgucSeKnzo',
           ),
           1 => NULL,
           2 => 
@@ -1794,7 +1477,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::emcLlJkGdrQ3QQh5',
+            '_route' => 'generated::ymJfJsPdWtdaVKpi',
           ),
           1 => NULL,
           2 => 
@@ -1885,7 +1568,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Vu1lpls1u6LS8xdd',
+            '_route' => 'generated::W9b3EmUlfdeMKvaH',
           ),
           1 => NULL,
           2 => 
@@ -1924,7 +1607,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::kPtC9GxhfPZhWxiK',
+            '_route' => '/',
           ),
           1 => NULL,
           2 => 
@@ -1944,7 +1627,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::1YsIqSF57hpAUkSr',
+            '_route' => 'generated::3JGYz7nGg63mecVk',
           ),
           1 => NULL,
           2 => 
@@ -1961,7 +1644,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/_debugbar/c(?|lockwork/([^/]++)(*:39)|ache/([^/]++)(?:/([^/]++))?(*:73))|/oauth/(?|tokens/([^/]++)(*:106)|clients/([^/]++)(?|(*:133))|personal\\-access\\-tokens/([^/]++)(*:175))|/admin/(?|edit\\-(?|gym/([^/]++)(*:215)|user/([^/]++)(*:236)|package/([^/]++)(*:260)|member/([^/]++)(*:283)|inventory/([^/]++)(*:309)|task/([^/]++)(*:330)|e(?|xpense/([^/]++)(*:357)|mployee(?|\\-package/([^/]++)(*:393)|/([^/]++)(*:410))))|update\\-(?|gym/([^/]++)(*:444)|user/([^/]++)(*:465)|package/([^/]++)(*:489)|member/([^/]++)(*:512)|inventory/([^/]++)(*:538)|status/([^/]++)(*:561)|task/([^/]++)(*:582)|e(?|xpense/([^/]++)(*:609)|mployee(?|\\-package/([^/]++)(*:645)|/([^/]++)(*:662))))|create\\-(?|fee/([^/]++)(*:696)|salary/([^/]++)(*:719))|delete\\-thing/([^/]++)(*:750))|/password/reset/([^/]++)(*:783))/?$}sDu',
+      0 => '{^(?|/_debugbar/c(?|lockwork/([^/]++)(*:39)|ache/([^/]++)(?:/([^/]++))?(*:73))|/oauth/(?|tokens/([^/]++)(*:106)|clients/([^/]++)(?|(*:133))|personal\\-access\\-tokens/([^/]++)(*:175))|/admin/(?|edit\\-(?|gym/([^/]++)(*:215)|user/([^/]++)(*:236)|package/([^/]++)(*:260)|member/([^/]++)(*:283)|e(?|mployee(?|\\-package/([^/]++)(*:323)|/([^/]++)(*:340))|xpense/([^/]++)(*:364))|inventory/([^/]++)(*:391))|update\\-(?|gym/([^/]++)(*:423)|user/([^/]++)(*:444)|package/([^/]++)(*:468)|member/([^/]++)(*:491)|e(?|mployee(?|\\-package/([^/]++)(*:531)|/([^/]++)(*:548))|xpense/([^/]++)(*:572))|inventory/([^/]++)(*:599))|create\\-(?|fee/([^/]++)(*:631)|salary/([^/]++)(*:654)))|/password/reset/([^/]++)(*:688))/?$}sDu',
     ),
     3 => 
     array (
@@ -2189,76 +1872,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      309 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'editInventory',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      330 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'editTask',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      357 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'editExpense',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      393 => 
+      323 => 
       array (
         0 => 
         array (
@@ -2281,7 +1895,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      410 => 
+      340 => 
       array (
         0 => 
         array (
@@ -2304,7 +1918,53 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      444 => 
+      364 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'editExpense',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      391 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'editInventory',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      423 => 
       array (
         0 => 
         array (
@@ -2326,7 +1986,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      465 => 
+      444 => 
       array (
         0 => 
         array (
@@ -2348,7 +2008,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      489 => 
+      468 => 
       array (
         0 => 
         array (
@@ -2370,7 +2030,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      512 => 
+      491 => 
       array (
         0 => 
         array (
@@ -2392,96 +2052,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      538 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'updateInventory',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      561 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'updateStatus',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      582 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'updateTask',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      609 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'updateExpense',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      645 => 
+      531 => 
       array (
         0 => 
         array (
@@ -2503,7 +2074,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      662 => 
+      548 => 
       array (
         0 => 
         array (
@@ -2525,7 +2096,51 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      696 => 
+      572 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'updateExpense',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      599 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'updateInventory',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      631 => 
       array (
         0 => 
         array (
@@ -2547,7 +2162,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      719 => 
+      654 => 
       array (
         0 => 
         array (
@@ -2569,30 +2184,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      750 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'deleteThing',
-          ),
-          1 => 
-          array (
-            0 => 'id',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      783 => 
+      688 => 
       array (
         0 => 
         array (
@@ -2819,7 +2411,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ab9BJ3pUERXznJHI' => 
+    'generated::oms1pZdljvsGvtos' => 
     array (
       'methods' => 
       array (
@@ -2840,7 +2432,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::ab9BJ3pUERXznJHI',
+        'as' => 'generated::oms1pZdljvsGvtos',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3412,27 +3004,30 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::NAHBtiWHwtHdOC5y' => 
+    'generated::LBBTaD4kx38r7vTl' => 
     array (
       'methods' => 
       array (
-        0 => 'POST',
+        0 => 'GET',
+        1 => 'HEAD',
       ),
-      'uri' => 'api/login',
+      'uri' => 'api/user',
       'action' => 
       array (
         'middleware' => 
         array (
           0 => 'api',
+          1 => 'auth:sanctum',
         ),
-        'uses' => 'App\\Http\\Controllers\\Api\\MemberController@login',
-        'controller' => 'App\\Http\\Controllers\\Api\\MemberController@login',
+        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:297:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:79:"function (\\Illuminate\\Http\\Request $request) {
+    return $request->user();
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006760000000000000000";}";s:4:"hash";s:44:"0PlkXrABp5AlSgdq/txZeec96LzojPJSg7VLRDs/jJI=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::NAHBtiWHwtHdOC5y',
+        'as' => 'generated::LBBTaD4kx38r7vTl',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3448,7 +3043,43 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::NkXQsbzqzOhHPy7X' => 
+    'generated::idS0AfGh1Syvt5TL' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'api/login',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'api',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Api\\UserController@login',
+        'controller' => 'App\\Http\\Controllers\\Api\\UserController@login',
+        'namespace' => NULL,
+        'prefix' => 'api',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::idS0AfGh1Syvt5TL',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::vp3qHySh1DOo4dmD' => 
     array (
       'methods' => 
       array (
@@ -3470,303 +3101,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::NkXQsbzqzOhHPy7X',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::Kalglmamkyzt4QCQ' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'api/defaulter-members-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'api',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Api\\MemberController@defaulterMembersFeeList',
-        'controller' => 'App\\Http\\Controllers\\Api\\MemberController@defaulterMembersFeeList',
-        'namespace' => NULL,
-        'prefix' => 'api',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::Kalglmamkyzt4QCQ',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::RQiV8FLuz9Owdukw' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'api/active-members-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'api',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Api\\MemberController@activeMembersList',
-        'controller' => 'App\\Http\\Controllers\\Api\\MemberController@activeMembersList',
-        'namespace' => NULL,
-        'prefix' => 'api',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::RQiV8FLuz9Owdukw',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::Fs3FaQW74TM1iDdJ' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'api/new-members-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'api',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Api\\MemberController@newMembersList',
-        'controller' => 'App\\Http\\Controllers\\Api\\MemberController@newMembersList',
-        'namespace' => NULL,
-        'prefix' => 'api',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::Fs3FaQW74TM1iDdJ',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::phNlM0eaiNOdDRDF' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'api/daily-members-fee-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'api',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Api\\MemberController@dailyMembersFeeList',
-        'controller' => 'App\\Http\\Controllers\\Api\\MemberController@dailyMembersFeeList',
-        'namespace' => NULL,
-        'prefix' => 'api',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::phNlM0eaiNOdDRDF',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::0nF019Z36rDbifTf' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'api/night-shift-members-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'api',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Api\\MemberController@nightShiftMembersList',
-        'controller' => 'App\\Http\\Controllers\\Api\\MemberController@nightShiftMembersList',
-        'namespace' => NULL,
-        'prefix' => 'api',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::0nF019Z36rDbifTf',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::dBibS2HCMI95GTc6' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'api/evening-shift-members-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'api',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Api\\MemberController@eveningShiftMembersList',
-        'controller' => 'App\\Http\\Controllers\\Api\\MemberController@eveningShiftMembersList',
-        'namespace' => NULL,
-        'prefix' => 'api',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::dBibS2HCMI95GTc6',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::sYTmYQciBkD8u2pD' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'api/morning-shift-members-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'api',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Api\\MemberController@morningShiftMembersList',
-        'controller' => 'App\\Http\\Controllers\\Api\\MemberController@morningShiftMembersList',
-        'namespace' => NULL,
-        'prefix' => 'api',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::sYTmYQciBkD8u2pD',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::NnOPZqd9ecXoeu8j' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'api/store-api-status-and-date',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'api',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Api\\MemberController@storeStatusAndDate',
-        'controller' => 'App\\Http\\Controllers\\Api\\MemberController@storeStatusAndDate',
-        'namespace' => NULL,
-        'prefix' => 'api',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::NnOPZqd9ecXoeu8j',
+        'as' => 'generated::vp3qHySh1DOo4dmD',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4807,124 +4142,6 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'addFee' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/add-fee',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isSuperAdminOrOwner',
-        ),
-        0 => 'FeeCollectionController',
-        'uses' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@addFee',
-        'controller' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@addFee',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'addFee',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'createFee' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/create-fee/{id}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isSuperAdminOrOwner',
-        ),
-        0 => 'FeeCollectionController',
-        'uses' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@createFee',
-        'controller' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@createFee',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'createFee',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'feeHistory' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/fee-history',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'FeeCollectionController',
-        'uses' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@feeHistory',
-        'controller' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@feeHistory',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'feeHistory',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
     'addAttendance' => 
     array (
       'methods' => 
@@ -5156,6 +4373,800 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'addFee' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/add-fee',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isSuperAdminOrOwner',
+        ),
+        0 => 'FeeCollectionController',
+        'uses' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@addFee',
+        'controller' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@addFee',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'addFee',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'createFee' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/create-fee/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isSuperAdminOrOwner',
+        ),
+        0 => 'FeeCollectionController',
+        'uses' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@createFee',
+        'controller' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@createFee',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'createFee',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'feeHistory' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/fee-history',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+        ),
+        0 => 'FeeCollectionController',
+        'uses' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@feeHistory',
+        'controller' => 'App\\Http\\Controllers\\backend\\FeeCollectionController@feeHistory',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'feeHistory',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'addEmployeePackage' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/add-employee-package',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+        ),
+        0 => 'EmployeePackageController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@addEmployeePackage',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@addEmployeePackage',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'addEmployeePackage',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'createEmployeePackage' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/create-employee-package',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+        ),
+        0 => 'EmployeePackageController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@createEmployeePackage',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@createEmployeePackage',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'createEmployeePackage',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'employeePackagesList' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/employee-packages-list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+        ),
+        0 => 'EmployeePackageController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@employeePackagesList',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@employeePackagesList',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'employeePackagesList',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'editEmployeePackage' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/edit-employee-package/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+        ),
+        0 => 'EmployeePackageController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@editEmployeePackage',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@editEmployeePackage',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'editEmployeePackage',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'updateEmployeePackage' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/update-employee-package/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+        ),
+        0 => 'EmployeePackageController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@updateEmployeePackage',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@updateEmployeePackage',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'updateEmployeePackage',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'addEmployee' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/add-employee',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+          3 => 'isOwner',
+        ),
+        0 => 'EmployeeController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeController@addEmployee',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeController@addEmployee',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'addEmployee',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'createEmployee' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/create-employee',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+          3 => 'isOwner',
+        ),
+        0 => 'EmployeeController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeController@createEmployee',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeController@createEmployee',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'createEmployee',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'employeeList' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/employee-list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+          3 => 'isOwner',
+        ),
+        0 => 'EmployeeController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeController@employeeList',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeController@employeeList',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'employeeList',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'editEmployee' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/edit-employee/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+          3 => 'isOwner',
+        ),
+        0 => 'EmployeeController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeController@editEmployee',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeController@editEmployee',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'editEmployee',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'updateEmployee' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/update-employee/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+          3 => 'isOwner',
+        ),
+        0 => 'EmployeeController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeController@updateEmployee',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeController@updateEmployee',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'updateEmployee',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'addEmployeeAttendance' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/add-employee-attendance',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        0 => 'EmployeeAttendanceController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@addEmployeeAttendance',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@addEmployeeAttendance',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'addEmployeeAttendance',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'createEmployeeAttendance' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/create-employee-attendance',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        0 => 'EmployeeAttendanceController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@createEmployeeAttendance',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@createEmployeeAttendance',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'createEmployeeAttendance',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'updateEmployeeAttendance' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/update-employee-attendance',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        0 => 'EmployeeAttendanceController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@updateEmployeeAttendance',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@updateEmployeeAttendance',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'updateEmployeeAttendance',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'singleEmployeeAttendanceList' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/single-employee-attendance-list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+        ),
+        0 => 'EmployeeAttendanceController',
+        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@singleEmployeeAttendanceList',
+        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@singleEmployeeAttendanceList',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'singleEmployeeAttendanceList',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'addSalary' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/add-salary',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+          3 => 'isOwner',
+        ),
+        0 => 'SalaryController',
+        'uses' => 'App\\Http\\Controllers\\backend\\SalaryController@addSalary',
+        'controller' => 'App\\Http\\Controllers\\backend\\SalaryController@addSalary',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'addSalary',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'createSalary' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/create-salary/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+          3 => 'isOwner',
+        ),
+        0 => 'SalaryController',
+        'uses' => 'App\\Http\\Controllers\\backend\\SalaryController@createSalary',
+        'controller' => 'App\\Http\\Controllers\\backend\\SalaryController@createSalary',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'createSalary',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'salaryHistory' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/salary-history',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isOwner',
+          3 => 'isOwner',
+        ),
+        0 => 'SalaryController',
+        'uses' => 'App\\Http\\Controllers\\backend\\SalaryController@salaryHistory',
+        'controller' => 'App\\Http\\Controllers\\backend\\SalaryController@salaryHistory',
+        'namespace' => 'backend',
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'salaryHistory',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'addInventory' => 
     array (
       'methods' => 
@@ -5344,236 +5355,6 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'updateInventory',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'addTask' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/add-task',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        'uses' => 'App\\Http\\Controllers\\backend\\TaskController@addTask',
-        'controller' => 'App\\Http\\Controllers\\backend\\TaskController@addTask',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'addTask',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'createTask' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/create-task',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        'uses' => 'App\\Http\\Controllers\\backend\\TaskController@createTask',
-        'controller' => 'App\\Http\\Controllers\\backend\\TaskController@createTask',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'createTask',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'taskList' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/task-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-        ),
-        'uses' => 'App\\Http\\Controllers\\backend\\TaskController@taskList',
-        'controller' => 'App\\Http\\Controllers\\backend\\TaskController@taskList',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'taskList',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'updateStatus' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/update-status/{id}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-        ),
-        'uses' => 'App\\Http\\Controllers\\backend\\TaskController@updateStatus',
-        'controller' => 'App\\Http\\Controllers\\backend\\TaskController@updateStatus',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'updateStatus',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'editTask' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/edit-task/{id}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        'uses' => 'App\\Http\\Controllers\\backend\\TaskController@editTask',
-        'controller' => 'App\\Http\\Controllers\\backend\\TaskController@editTask',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'editTask',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'updateTask' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/update-task/{id}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        'uses' => 'App\\Http\\Controllers\\backend\\TaskController@updateTask',
-        'controller' => 'App\\Http\\Controllers\\backend\\TaskController@updateTask',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'updateTask',
       ),
       'fallback' => false,
       'defaults' => 
@@ -6142,960 +5923,6 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'addEmployeePackage' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/add-employee-package',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'EmployeePackageController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@addEmployeePackage',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@addEmployeePackage',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'addEmployeePackage',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'createEmployeePackage' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/create-employee-package',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'EmployeePackageController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@createEmployeePackage',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@createEmployeePackage',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'createEmployeePackage',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'employeePackagesList' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/employee-packages-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'EmployeePackageController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@employeePackagesList',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@employeePackagesList',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'employeePackagesList',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'editEmployeePackage' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/edit-employee-package/{id}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'EmployeePackageController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@editEmployeePackage',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@editEmployeePackage',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'editEmployeePackage',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'updateEmployeePackage' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/update-employee-package/{id}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'EmployeePackageController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@updateEmployeePackage',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeePackageController@updateEmployeePackage',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'updateEmployeePackage',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'addMemberThing' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/add-member-thing',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'MemberThingController',
-        'uses' => 'App\\Http\\Controllers\\backend\\MemberThingController@addMemberThing',
-        'controller' => 'App\\Http\\Controllers\\backend\\MemberThingController@addMemberThing',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'addMemberThing',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'createThing' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/create-member-thing',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'MemberThingController',
-        'uses' => 'App\\Http\\Controllers\\backend\\MemberThingController@createThing',
-        'controller' => 'App\\Http\\Controllers\\backend\\MemberThingController@createThing',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'createThing',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'thingsList' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/things-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'MemberThingController',
-        'uses' => 'App\\Http\\Controllers\\backend\\MemberThingController@thingsList',
-        'controller' => 'App\\Http\\Controllers\\backend\\MemberThingController@thingsList',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'thingsList',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'deleteThing' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/delete-thing/{id}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'MemberThingController',
-        'uses' => 'App\\Http\\Controllers\\backend\\MemberThingController@deleteThing',
-        'controller' => 'App\\Http\\Controllers\\backend\\MemberThingController@deleteThing',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'deleteThing',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'addEmployee' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/add-employee',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-          3 => 'isOwner',
-        ),
-        0 => 'EmployeeController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeController@addEmployee',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeController@addEmployee',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'addEmployee',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'createEmployee' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/create-employee',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-          3 => 'isOwner',
-        ),
-        0 => 'EmployeeController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeController@createEmployee',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeController@createEmployee',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'createEmployee',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'employeeList' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/employee-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-          3 => 'isOwner',
-        ),
-        0 => 'EmployeeController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeController@employeeList',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeController@employeeList',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'employeeList',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'editEmployee' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/edit-employee/{id}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-          3 => 'isOwner',
-        ),
-        0 => 'EmployeeController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeController@editEmployee',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeController@editEmployee',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'editEmployee',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'updateEmployee' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/update-employee/{id}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-          3 => 'isOwner',
-        ),
-        0 => 'EmployeeController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeController@updateEmployee',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeController@updateEmployee',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'updateEmployee',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'addSalary' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/add-salary',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-          3 => 'isOwner',
-        ),
-        0 => 'SalaryController',
-        'uses' => 'App\\Http\\Controllers\\backend\\SalaryController@addSalary',
-        'controller' => 'App\\Http\\Controllers\\backend\\SalaryController@addSalary',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'addSalary',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'createSalary' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/create-salary/{id}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-          3 => 'isOwner',
-        ),
-        0 => 'SalaryController',
-        'uses' => 'App\\Http\\Controllers\\backend\\SalaryController@createSalary',
-        'controller' => 'App\\Http\\Controllers\\backend\\SalaryController@createSalary',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'createSalary',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'salaryHistory' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/salary-history',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-          3 => 'isOwner',
-        ),
-        0 => 'SalaryController',
-        'uses' => 'App\\Http\\Controllers\\backend\\SalaryController@salaryHistory',
-        'controller' => 'App\\Http\\Controllers\\backend\\SalaryController@salaryHistory',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'salaryHistory',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'addEmployeeAttendance' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/add-employee-attendance',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-        ),
-        0 => 'EmployeeAttendanceController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@addEmployeeAttendance',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@addEmployeeAttendance',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'addEmployeeAttendance',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'createEmployeeAttendance' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/create-employee-attendance',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-        ),
-        0 => 'EmployeeAttendanceController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@createEmployeeAttendance',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@createEmployeeAttendance',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'createEmployeeAttendance',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'updateEmployeeAttendance' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/update-employee-attendance',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-        ),
-        0 => 'EmployeeAttendanceController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@updateEmployeeAttendance',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@updateEmployeeAttendance',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'updateEmployeeAttendance',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'singleEmployeeAttendanceList' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/single-employee-attendance-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'EmployeeAttendanceController',
-        'uses' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@singleEmployeeAttendanceList',
-        'controller' => 'App\\Http\\Controllers\\backend\\EmployeeAttendanceController@singleEmployeeAttendanceList',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'singleEmployeeAttendanceList',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'addMessage' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/add-message',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'MessageController',
-        'uses' => 'App\\Http\\Controllers\\backend\\MessageController@addMessage',
-        'controller' => 'App\\Http\\Controllers\\backend\\MessageController@addMessage',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'addMessage',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'createMessage' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/create-message',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'MessageController',
-        'uses' => 'App\\Http\\Controllers\\backend\\MessageController@createMessage',
-        'controller' => 'App\\Http\\Controllers\\backend\\MessageController@createMessage',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'createMessage',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'messageList' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/message-list',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth',
-          2 => 'isOwner',
-        ),
-        0 => 'MessageController',
-        'uses' => 'App\\Http\\Controllers\\backend\\MessageController@messageList',
-        'controller' => 'App\\Http\\Controllers\\backend\\MessageController@messageList',
-        'namespace' => 'backend',
-        'prefix' => '/admin',
-        'where' => 
-        array (
-        ),
-        'as' => 'messageList',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
     'login' => 
     array (
       'methods' => 
@@ -7133,7 +5960,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::C7Ru2rQIYtDgfL9v' => 
+    'generated::yV601IPgucSeKnzo' => 
     array (
       'methods' => 
       array (
@@ -7153,7 +5980,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::C7Ru2rQIYtDgfL9v',
+        'as' => 'generated::yV601IPgucSeKnzo',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7242,7 +6069,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::emcLlJkGdrQ3QQh5' => 
+    'generated::ymJfJsPdWtdaVKpi' => 
     array (
       'methods' => 
       array (
@@ -7262,7 +6089,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::emcLlJkGdrQ3QQh5',
+        'as' => 'generated::ymJfJsPdWtdaVKpi',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7461,7 +6288,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Vu1lpls1u6LS8xdd' => 
+    'generated::W9b3EmUlfdeMKvaH' => 
     array (
       'methods' => 
       array (
@@ -7481,7 +6308,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Vu1lpls1u6LS8xdd',
+        'as' => 'generated::W9b3EmUlfdeMKvaH',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7513,7 +6340,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:286:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:68:"function () {
     return \\view(\'backend.no-access.access-page\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000007870000000000000000";}";s:4:"hash";s:44:"0POojrwP+wZNLTM5ukkOQ4z/K4EkJY6z4pIFP4+/qMA=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006790000000000000000";}";s:4:"hash";s:44:"Z0q/wRCs7ANrg9dMSSQ/CfqGBWeXs5Si9C15Njv9A+M=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -7535,7 +6362,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::kPtC9GxhfPZhWxiK' => 
+    '/' => 
     array (
       'methods' => 
       array (
@@ -7551,13 +6378,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:267:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:49:"function () {
     return \\view(\'auth.login\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000007e20000000000000000";}";s:4:"hash";s:44:"kMzCCYF8G1GMr05xRJfMR1MRQqNOnWVUgJjL58eHulc=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006c80000000000000000";}";s:4:"hash";s:44:"xMTRHl+4WxxpFnJ3nh5ozgzhBLhtmxYy1UuiSuuF4ho=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::kPtC9GxhfPZhWxiK',
+        'as' => '/',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7573,7 +6400,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::1YsIqSF57hpAUkSr' => 
+    'generated::3JGYz7nGg63mecVk' => 
     array (
       'methods' => 
       array (
@@ -7587,22 +6414,20 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:518:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:299:"function () {
+        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:514:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:295:"function () {
 
     \\Illuminate\\Support\\Facades\\Artisan::call(\'cache:clear\');
     \\Illuminate\\Support\\Facades\\Artisan::call(\'config:clear\');
     \\Illuminate\\Support\\Facades\\Artisan::call(\'config:cache\');
     \\Illuminate\\Support\\Facades\\Artisan::call(\'view:clear\');
-
     return "Cleared!";
-
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000007ea0000000000000000";}";s:4:"hash";s:44:"D/BhGksIQNW8hPHLwOrBgwkyV78DVJEwER72sXEaLmg=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000006d00000000000000000";}";s:4:"hash";s:44:"xPwp8qHX98yyxSvsk9cc10tg2PFgNO1L7hUy5dK4DIQ=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'generated::1YsIqSF57hpAUkSr',
+        'as' => 'generated::3JGYz7nGg63mecVk',
       ),
       'fallback' => false,
       'defaults' => 

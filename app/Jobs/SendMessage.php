@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Models\Member;
 use App\Models\Message;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -16,16 +17,22 @@ class SendMessage implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $memberId;
+//    protected $memberId;
+    protected $member;
+    protected $messageContent;
+    protected $belong_to_gym;
 
     /**
      * Create a new job instance.
      *
-     * @param int $memberId
+     * @param int Member $member
      */
-    public function __construct($memberId)
+    public function __construct(Member $member, $messageContent, $belong_to_gym)
     {
-        $this->memberId = $memberId;
+//        $this->memberId = $memberId;
+        $this->member = $member;
+        $this->messageContent = $messageContent;
+        $this->belong_to_gym = $belong_to_gym;
     }
 
     /**
@@ -34,44 +41,48 @@ class SendMessage implements ShouldQueue
     public function handle()
     {
         // Retrieve the member using the provided ID
-        $member = Member::find($this->memberId);
+        $member = $this->member;
+        $messageContent = $this->messageContent;
+        $belong_to_gym = $this->belong_to_gym;
+        $gymData = User::where('belong_to_gym', $belong_to_gym)->where('gym_package', '=', 'paid')->first();
 
-        if ($member) {
-            $cDate = Carbon::parse(now())->addMonth(1)->format('Y-m-d');
+        if ($gymData->gym_package === 'paid') {
+            $url = "http://whatsapp247.com/api/send.php";
 
-            $message = Message::whereRaw('DATE(created_at) < ?', [$cDate])  // Compare with date part only
-            ->orderBy('created_at', 'desc')
-                ->first();
+            $parameters = array("api_key" => $gymData->message_api_key,
+                "mobile" => "92" . $member->member_phone,
+                "message" => $messageContent,
+                "priority" => "0",
+                "type" => 0
+            );
 
-            if ($message) {
-                // Send the message for this member
-                $url = "http://whatsapp247.com/api/send.php";
+            $ch = curl_init();
+            $timeout = 30;
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $parameters);
+            curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+            $response = curl_exec($ch);
+            curl_close($ch);
 
-                $parameters = array(
-                    "api_key" => "923092018911-f5b7824d-586c-489d-95e8-881aad1edc57",
-                    "mobile" => "92" . $member->member_phone,
-                    "message" => "test",
-                    "priority" => "10",
-                    "type" => 1, // Set type to 1 for image
-                    "url" => asset('/backend/images/message/media/' . $message->message_url), // URL to your image
-                    "caption" => $message->message_caption // Optional image caption
-                );
-
-                $ch = curl_init();
-                $timeout = 30;
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_HEADER, 0);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-                curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-                curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, $parameters);
-                curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
-                $response = curl_exec($ch);
-                curl_close($ch);
-
-                echo $response;
+            echo $response;
+            // Save the success response in the database
+            if ($response) {
+                Message::create([
+                    'send_to' => $member->member_phone, // Assuming you have a 'member_id' field in your Response model
+                    'schedule_period' => 'Daily',
+                    'text_message' => $messageContent,
+                    'belong_to_gym' => $belong_to_gym,
+                    'success_response' => $response,
+                ]);
             }
+        } else {
+            "Please buy message package";
         }
     }
 }
+

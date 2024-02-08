@@ -13,9 +13,15 @@
 @section('content')
     <div class="row">
         <div class="col-12">
-            @if(\Illuminate\Support\Facades\Auth::user()->type == "owner")
-                <a class="btn btn-success" href="{{route('memberExport')}}">Export Members</a>
-            @endif
+            {{--            @if(\Illuminate\Support\Facades\Auth::user()->type == "owner")--}}
+            {{--                <a class="btn btn-success" href="{{route('memberExport')}}">Export Members</a>--}}
+            {{--            @endif--}}
+
+            {{--            <form action="{{ route('memberImport') }}" method="post" enctype="multipart/form-data">--}}
+            {{--                @csrf--}}
+            {{--                <input type="file" name="excel_file">--}}
+            {{--                <button type="submit">Import</button>--}}
+            {{--            </form>--}}
             <div class="card">
                 <div class="card-body">
                     <div class="tab-content">
@@ -57,14 +63,15 @@
                                 @foreach($memberData as $memberDataVar)
 
                                     <tr>
-                                        <td>{{$memberDataVar->id}}</td>
+                                        <td>{{$memberDataVar->roll_no}}</td>
                                         <td>{{$memberDataVar->member_name}}</td>
                                         <td>{{$memberDataVar->member_phone}}</td>
                                         <td>{{$memberDataVar->member_fee_end_date}}</td>
                                         <td>
                                             @if(\Illuminate\Support\Facades\Auth::user()->type == "owner")
-                                                <a href="{{route('editMember',['id'=>$memberDataVar->id])}}"
-                                                   class="action-icon"> <i class="mdi mdi-pencil"></i></a></td>
+                                                <a href="{{route('editMember',['id'=>$memberDataVar->roll_no])}}"
+                                                   class="action-icon" target="_blank"> <i
+                                                        class="mdi mdi-pencil"></i></a></td>
                                         @endif
                                     </tr>
                                 @endforeach

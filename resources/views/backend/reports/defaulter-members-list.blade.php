@@ -36,7 +36,7 @@
                                     @if($defaulterMembersVar->member_fee_end_date  < $currentDate)
                                         <tr>
                                             <td>
-                                                {{$defaulterMembersVar->id}}
+                                                {{$defaulterMembersVar->roll_no}}
                                             </td>
                                             <td>
                                                 {{$defaulterMembersVar->member_name}}

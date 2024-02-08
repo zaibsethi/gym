@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('gym_title')->nullable();
             $table->string('gym_slug')->nullable();
             $table->string('gym_package')->nullable();
+            $table->string('message_api_key')->nullable();
             $table->string('gym_package_start_date')->nullable();
             $table->string('gym_package_end_date')->nullable();
             $table->string('name');

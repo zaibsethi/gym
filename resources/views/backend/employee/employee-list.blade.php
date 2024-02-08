@@ -25,7 +25,7 @@
 
                                 <tr>
                                     <th>Employee ID</th>
-                                    <th>Picture</th>
+{{--                                    <th>Picture</th>--}}
 {{--                                    <th>Emp Qr</th>--}}
                                     <th>Name</th>
                                     <th>phone</th>
@@ -60,23 +60,23 @@
                                 @foreach($employeeData as $employeeDataVar)
 
                                     <tr>
-                                        <td>{{$employeeDataVar->id}}</td>
+                                        <td>{{$employeeDataVar->employee_id}}</td>
 
-                                        <td>
-                                            @if($employeeDataVar->image == null)
-                                                {{--      if there is no pic then default will display--}}
+{{--                                        <td>--}}
+{{--                                            @if($employeeDataVar->image == null)--}}
+{{--                                                --}}{{--      if there is no pic then default will display--}}
 
-                                                <img class="img-responsive  img-thumbnail"
-                                                     style="height: 120px; width: 120px"
-                                                     src="{{ asset('backend/images/black_employee_profile_picture.jpg') }}"
-                                            @else
-                                                {{--        if getting pic from database--}}
+{{--                                                <img class="img-responsive  img-thumbnail"--}}
+{{--                                                     style="height: 120px; width: 120px"--}}
+{{--                                                     src="{{ asset('backend/images/black_employee_profile_picture.jpg') }}"--}}
+{{--                                            @else--}}
+{{--                                                --}}{{--        if getting pic from database--}}
 
-                                                <img class="img-responsive  img-thumbnail"
-                                                     style="height: 120px; width: 120px"
-                                                     src="{{asset('/backend/images/employee/profile/'.$employeeDataVar->image)}}">
-                                            @endif
-                                        </td>
+{{--                                                <img class="img-responsive  img-thumbnail"--}}
+{{--                                                     style="height: 120px; width: 120px"--}}
+{{--                                                     src="{{asset('/backend/images/employee/profile/'.$employeeDataVar->image)}}">--}}
+{{--                                            @endif--}}
+{{--                                        </td>--}}
 {{--                                        <td>{!! QrCode::generate($employeeDataVar->id); !!}--}}
                                         </td>
                                         <td>{{$employeeDataVar->employee_name}}</td>
@@ -88,12 +88,12 @@
                                             {{--                                            getting data from package table to compare with member selected package--}}
                                             @foreach($packageData as $packageDataVar)
 
-                                                @if($employeeDataVar->employee_package == $packageDataVar->id)
+                                                @if($employeeDataVar->employee_package == $packageDataVar->salary_package_id)
                                                     {{$packageDataVar->package_amount}}
                                                 @endif
                                             @endforeach
                                         </td>
-                                        <td><a href="{{route('editEmployee',['id'=>$employeeDataVar->id])}}"
+                                        <td><a href="{{route('editEmployee',['id'=>$employeeDataVar->employee_id])}}"
                                                class="action-icon"> <i class="mdi mdi-pencil"></i></a></td>
                                     </tr>
                                 @endforeach

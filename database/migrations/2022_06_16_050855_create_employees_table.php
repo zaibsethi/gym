@@ -16,7 +16,6 @@ class CreateEmployeesTable extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
             $table->string('belong_to_gym')->nullable();
-
             $table->string('image')->nullable();
             $table->string('employee_name');
             $table->string('employee_phone');

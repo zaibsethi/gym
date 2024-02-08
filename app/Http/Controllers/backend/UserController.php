@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
+
 
 class UserController extends Controller
 {
@@ -131,6 +133,10 @@ class UserController extends Controller
         $userData['email'] = strtolower($firstName . "@" . Auth::user()->gym_name . ".com");
         $userData['belong_to_gym'] = Auth::user()->gym_id;
         $userData['password'] = Hash::make($request->password);
+        $existingUser = User::where('email', $userData['email'])->first();
+        if ($existingUser) {
+            return redirect(route('addUser'))->with('danger', "Duplicate email please select unique name.");
+        }
         User::create($userData);
         return redirect(route('addUser'))->with('success', "user Created.");
     }

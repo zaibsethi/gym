@@ -7,7 +7,9 @@ use App\Http\Requests\Member\CreateMemberRequest;
 use App\Http\Requests\Member\UpdateMemberRequest;
 use App\Models\Employee;
 use App\Models\Member;
+use App\Models\Member1;
 use App\Models\Package;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,7 +26,8 @@ class MemberController extends Controller
         // id send for rollnumber autoincrement
         // latest get from created_at
         // jahan same gym k members hon ge total count k liye
-        $id = DB::table('members')->where('belong_to_gym', Auth::user()->belong_to_gym)->count();
+        $id = DB::table('members')->where('belong_to_gym', Auth::user()->belong_to_gym)->where('roll_no', '<>', null)->count();
+//        $id = DB::table('members')->select('roll_no')->where('belong_to_gym', Auth::user()->belong_to_gym)->orderBy('id', 'desc')->value('roll_no');
         //all packages belong to same gym
         $getPackageData = Package::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
         return view('backend.member.add-member', compact('id', 'getPackageData',));
@@ -32,19 +35,24 @@ class MemberController extends Controller
 
     public function createMember(CreateMemberRequest $request)
     {
+        $id = DB::table('members')->where('belong_to_gym', Auth::user()->belong_to_gym)->where('roll_no', '<>', null)->count();
+
         $getMemberData = $request->all();
         $getMemberData['member_joining_date'] = Carbon::createFromFormat('m/d/Y', $request->member_joining_date)->format('Y-m-d');
         $getMemberData['member_fee_start_date'] = Carbon::createFromFormat('m/d/Y', $request->member_fee_start_date)->format('Y-m-d');
         $getMemberData['member_fee_end_date'] = Carbon::createFromFormat('m/d/Y', $request->member_fee_end_date)->format('Y-m-d');
         $getMemberData['belong_to_gym'] = Auth::user()->belong_to_gym;
+        $getMemberData['roll_no'] = $id + 1;
         Member::create($getMemberData);
+
         return redirect(route('addMember'))->with('success', 'Member created successfully.');
     }
 
     public function memberList()
     {
-        $memberData = Member::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
-        // checking for cache if members data exist or not, if not then create
+        $memberData = Member::where('belong_to_gym', Auth::user()->belong_to_gym)
+            ->orderBy('roll_no')
+            ->get();        // checking for cache if members data exist or not, if not then create
 //        if (Cache::missing('members')) {
 //            Cache::put('members', Member::select(['id', 'member_name', 'member_phone', 'member_fee_end_date'])->get(), now()->addSecond(20));
 //            $memberData = Cache::get('members');
@@ -58,51 +66,59 @@ class MemberController extends Controller
     {
         $gymId = Auth::user()->belong_to_gym;
         $getPackageData = Package::where('belong_to_gym', $gymId)->get();
-        $memberDataByID = Member::where('belong_to_gym', $gymId)->find($id);
+        $memberDataByID = Member::where('belong_to_gym', $gymId)->where('roll_no', $id)->first();
         $getEmployeeData = Employee::where('belong_to_gym', $gymId)->where('employee_type', 'trainer')->get();
         return view('backend.member.edit-member', compact('memberDataByID', 'getPackageData', 'getEmployeeData'));
     }
 
-    function updateMember(UpdateMemberRequest $request, Member $id)
+    function updateMember(UpdateMemberRequest $request, $roll_no)
     {
+//        $id = DB::table('members')->where('belong_to_gym', Auth::user()->belong_to_gym)->where('roll_no', '<>', null)->count();
+//        $getMemberData['roll_no'] = $id + 1;
+
+        $getMemberData = Member::where('belong_to_gym', Auth::user()->belong_to_gym)->where('roll_no', $roll_no)->first();
+
+
         $this->validate($request, [
-            'member_phone' => ($id->member_phone == $request->member_phone) ? 'required' : 'required|unique:members',
+            'member_phone' => ($getMemberData->member_phone == $request->member_phone) ? 'required' : 'required|unique:members',
         ]);
         $memberData = $request->all();
+        $getMemberData->update($memberData);
+
         // update member image
-        if ($request->image != '') {
-            $filename = '';
-            if ($request->hasFile('image')) {
-                $image = $request->file('image');
-                $path = public_path() . '/backend/images/member/profile/';
-                $filename = time() . $image->getClientOriginalName();
-                $image->move($path, $filename);
-                $request->image = $filename;
-                $image_path = "/backend/images/member/profile/";  // Value is not URL but directory file path
-//               start: unlink old image
-                if ($id->image != null) {
-                    $oldImage = '/backend/images/member/profile/' . $id->image;
-                    $oldImagePath = str_replace('\\', '/', public_path());
-                    unlink($oldImagePath . $oldImage);
-                }
-//               end: unlink old image
-            }
-            $id->update($memberData);
-            $id->image = $filename;
-            $id->save();
-        }
-        if ($request->image == '' || $request->image == null) {
-            $id->update($memberData);
-        }
-        return redirect()->route('memberList')->with('success', 'Member info Updated.');
+//        if ($request->image != '') {
+//            $filename = '';
+//            if ($request->hasFile('image')) {
+//                $image = $request->file('image');
+//                $path = public_path() . '/backend/images/member/profile/';
+//                $filename = time() . $image->getClientOriginalName();
+//                $image->move($path, $filename);
+//                $request->image = $filename;
+//                $image_path = "/backend/images/member/profile/";  // Value is not URL but directory file path
+////               start: unlink old image
+//                if ($getMemberData->image != null) {
+//                    $oldImage = '/backend/images/member/profile/' . $getMemberData->image;
+//                    $oldImagePath = str_replace('\\', '/', public_path());
+//                    unlink($oldImagePath . $oldImage);
+//                }
+////               end: unlink old image
+//            }
+//            $getMemberData->update($memberData);
+//            $getMemberData->image = $filename;
+//            $getMemberData->save();
+//        }
+//        if ($request->image == '' || $request->image == null) {
+//            $getMemberData->update($memberData);
+//        }
+        return redirect()->back()->with('success', 'Member info Updated.');
     }
 
-    public function memberExport()
-    {
-        // export members excel file from database
-        // refference: https://docs.laravel-excel.com/3.1/exports/
-        return Excel::download(new MembersExport, "members.xlsx", "Xlsx");
-    }
+//    public function memberExport()
+//    {
+//        // export members excel file from database
+//        // refference: https://docs.laravel-excel.com/3.1/exports/
+//        return Excel::download(new MembersExport, "members.xlsx", "Xlsx");
+//    }
 
 //    public function memberImport(Request $request)
 //    {
@@ -141,4 +157,6 @@ class MemberController extends Controller
         $packageData = Package::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
         return view('backend.member.personal-training', compact('personalTraining', 'packageData'));
     }
+
+
 }

@@ -15,12 +15,12 @@ class CreateMemberThingsTable extends Migration
     {
         Schema::create('member_things', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('belong_to_gym')->nullable();
-            $table->string('member_phone');
-            $table->string('member_thing_category');
-            $table->string('member_thing_description')->nullable();
-            $table->string('member_name');
-            $table->string('member_fee_end_Date');
+//            $table->string('belong_to_gym')->nullable();
+//            $table->string('member_phone');
+//            $table->string('member_thing_category');
+//            $table->string('member_thing_description')->nullable();
+//            $table->string('member_name');
+//            $table->string('member_fee_end_Date');
             $table->timestamps();
         });
     }

@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <form method="post" action="{{route('updateInventory',['id'=>$inventoryData->id])}}" enctype="multipart/form-data" class="needs-validation" onload="multiplyBy()"
+    <form method="post" action="{{route('updateInventory',['id'=>$inventoryData->inventory_id])}}" enctype="multipart/form-data" class="needs-validation" onload="multiplyBy()"
           novalidate autocomplete="off">
         @if(session()->has('success'))
             <div class="alert alert-success" role="alert">

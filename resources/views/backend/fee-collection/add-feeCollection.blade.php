@@ -62,7 +62,7 @@
                                     @if(($memberDataVar->member_fee_end_date . " " . "00:00:00") > ($currentDate))
 
                                         <tr>
-                                            <td>{{$memberDataVar->id}}</td>
+                                            <td>{{$memberDataVar->roll_no}}</td>
                                             <td>{{$memberDataVar->member_name}}</td>
                                             <td>
                                                 {{Carbon\Carbon::parse($memberDataVar->member_fee_end_date)->format('Y-m-d')}}
@@ -156,7 +156,7 @@
 
                                             <td>
                                                 @foreach($packageData as $packageDataVar)
-                                                    @if($packageDataVar->id == $memberDataVar->member_package)
+                                                    @if($packageDataVar->package_id == $memberDataVar->member_package)
                                                         {{--                                                    get all packages data--}}
                                                         <span>{{$packageDataVar->package_amount}}</span>
                                                         <input type="hidden" name="amount_received"
@@ -173,7 +173,7 @@
                                                     @csrf
                                                     <input name="belong_to_gym" hidden>
 
-                                                    <input name="member_id" value="{{$memberDataVar->id}}" hidden>
+                                                    <input name="member_id" value="{{$memberDataVar->roll_no}}" hidden>
                                                     <input name="member_name" value="{{$memberDataVar->member_name}}"
                                                            hidden>
                                                     <input name="member_phone" value="{{$memberDataVar->member_phone}}"
@@ -213,7 +213,7 @@
                                                     <form method="post"
                                                           action="{{route('feeHistory')}}">
                                                         @csrf
-                                                        <input name="member_id" value="{{$memberDataVar->id}}"
+                                                        <input name="member_id" value="{{$memberDataVar->roll_no}}"
                                                                hidden>
                                                         <button type="submit" class="btn btn-success">Fee History
                                                         </button>

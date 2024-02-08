@@ -19,8 +19,10 @@ class PackageController extends Controller
 
     public function createPackage(CreatePackageRequest $request)
     {
+        $getPackageData = Package::where('belong_to_gym', Auth::user()->belong_to_gym)->count();
         $getPackageRequestData = $request->all();
         $getPackageRequestData['belong_to_gym'] = Auth::user()->belong_to_gym;
+        $getPackageRequestData['package_id'] = $getPackageData + 1;
         Package::create($getPackageRequestData);
         return redirect(route('addPackage'))->with('success', 'Package created successfully.');
     }
@@ -34,16 +36,16 @@ class PackageController extends Controller
 
     public function editPackage($id)
     {
-        $editPackageData = Package::find($id);
+        $editPackageData = Package::where('belong_to_gym', Auth::user()->belong_to_gym)->where('package_id',$id)->first();
         return view('backend.package.edit-package', compact('editPackageData'));
     }
 
-    public function updatePackage(CreatePackageRequest $request, Package $id)
+    public function updatePackage(CreatePackageRequest $request,  $id)
     {
-
+        $getPackageData = Package::where('belong_to_gym', Auth::user()->belong_to_gym)->where('package_id',$id)->first();
 
         $getPackageRequestData = $request->all();
-        $id->update($getPackageRequestData);
+        $getPackageData->update($getPackageRequestData);
 
         return redirect(route('packagesList'))->with('success', 'Package updated successfully.');
     }

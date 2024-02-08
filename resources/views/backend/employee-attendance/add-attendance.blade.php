@@ -25,7 +25,7 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Picture</th>
+{{--                                    <th>Picture</th>--}}
                                     <th>Name</th>
                                     <th>phone</th>
                                     <th>salary date</th>
@@ -77,21 +77,21 @@
 
                                         <tr>
 
-                                            <td>{{$employeeDataVar->id}}</td>
+                                            <td>{{$employeeDataVar->employee_id}}</td>
 
-                                            <td>
-                                                @if($employeeDataVar->image == null)
-                                                    {{--                                                          if there is no pic then default will display--}}
-                                                    <img class="img-responsive  img-thumbnail"
-                                                         style="height: 120px; width: 120px"
-                                                         src="{{ asset('backend/images/black_employee_profile_picture.jpg') }}"
-                                                @else
-                                                    {{--                                                            if getting pic from database--}}
-                                                    <img class="img-responsive  img-thumbnail"
-                                                         style="height: 120px; width: 120px"
-                                                         src="{{asset('/backend/images/employee/profile/'.$employeeDataVar->image)}}">
-                                                @endif
-                                            </td>
+{{--                                            <td>--}}
+{{--                                                @if($employeeDataVar->image == null)--}}
+{{--                                                    --}}{{--                                                          if there is no pic then default will display--}}
+{{--                                                    <img class="img-responsive  img-thumbnail"--}}
+{{--                                                         style="height: 120px; width: 120px"--}}
+{{--                                                         src="{{ asset('backend/images/black_employee_profile_picture.jpg') }}"--}}
+{{--                                                @else--}}
+{{--                                                    --}}{{--                                                            if getting pic from database--}}
+{{--                                                    <img class="img-responsive  img-thumbnail"--}}
+{{--                                                         style="height: 120px; width: 120px"--}}
+{{--                                                         src="{{asset('/backend/images/employee/profile/'.$employeeDataVar->image)}}">--}}
+{{--                                                @endif--}}
+{{--                                            </td>--}}
                                             <td>{{$employeeDataVar->employee_name}}</td>
                                             <td>{{$employeeDataVar->employee_phone}}</td>
                                             <td>{{$employeeDataVar->employee_salary_end_date}}</td>
@@ -103,7 +103,7 @@
                                                     @csrf
                                                     <input name="belong_to_gym" hidden>
 
-                                                    <input name="employee_id" value="{{$employeeDataVar->id}}" hidden>
+                                                    <input name="employee_id" value="{{$employeeDataVar->employee_id}}" hidden>
 
                                                     <input name="employee_name"
                                                            value="{{$employeeDataVar->employee_name}}"
@@ -182,7 +182,7 @@
                                                 <form method="post" action="{{route('singleEmployeeAttendanceList')}}"
                                                       enctype="multipart/form-data">
                                                     @csrf
-                                                    <input name="employee_id" value="{{$employeeDataVar->id}}" hidden>
+                                                    <input name="employee_id" value="{{$employeeDataVar->employee_id}}" hidden>
 
                                                     <button type="submit"
                                                             class="btn btn-info">Attendance List

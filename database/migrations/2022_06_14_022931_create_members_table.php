@@ -16,6 +16,7 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('roll_no')->nullable();
             $table->string('belong_to_gym')->nullable();
             $table->string('image')->nullable();
             $table->string('member_name');
@@ -32,14 +33,14 @@ class CreateMembersTable extends Migration
             $table->longText('member_address')->nullable();
             $table->string('member_pemc')->nullable();
 //            $table->string('api_type')->nullable();
-            $table->string('all_members_list_api_date')->nullable();
-            $table->string('default_members_list_api_date')->nullable();
-            $table->string('active_members_list_api_date')->nullable();
-            $table->string('new_members_list_api_date')->nullable();
-            $table->string('daily_members_fee_list_api_date')->nullable();
-            $table->string('night_shift_members_list_api_date')->nullable();
-            $table->string('morning_shift_members_list_api_date')->nullable();
-            $table->string('evening_shift_members_list_api_date')->nullable();
+//            $table->string('all_members_list_api_date')->nullable();
+//            $table->string('default_members_list_api_date')->nullable();
+//            $table->string('active_members_list_api_date')->nullable();
+//            $table->string('new_members_list_api_date')->nullable();
+//            $table->string('daily_members_fee_list_api_date')->nullable();
+//            $table->string('night_shift_members_list_api_date')->nullable();
+//            $table->string('morning_shift_members_list_api_date')->nullable();
+//            $table->string('evening_shift_members_list_api_date')->nullable();
             $table->timestamps();
         });
 

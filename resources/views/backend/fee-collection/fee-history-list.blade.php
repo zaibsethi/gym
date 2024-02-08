@@ -26,7 +26,6 @@
                                 <tr>
                                     <th>Member ID</th>
                                     <th>Member Name</th>
-                                    <th>Member phone</th>
                                     <th>package Amount</th>
                                     <th>Amount Received</th>
                                     <th>Fee Date</th>
@@ -63,8 +62,7 @@
                                         </td>
                                         <td>                {{$feeHistoryDataVar->member_name}}
                                         </td>
-                                        <td>                {{$feeHistoryDataVar->member_phone}}
-                                        </td>
+
                                         <td>                {{$feeHistoryDataVar->package_amount}}
                                         </td>
                                         <td>                {{$feeHistoryDataVar->amount_received}}

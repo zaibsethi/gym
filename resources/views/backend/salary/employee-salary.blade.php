@@ -63,7 +63,7 @@
                                     @if(($employeeDataVar->employee_salary_end_date . " " . "00:00:00") > ($currentDate))
 
                                         <tr>
-                                            <td>{{$employeeDataVar->id}}</td>
+                                            <td>{{$employeeDataVar->employee_id}}</td>
 
 
                                             <td>{{$employeeDataVar->employee_name}}</td>
@@ -176,7 +176,7 @@
 
                                             <td>
                                                 @foreach($packageData as $packageDataVar)
-                                                    @if($packageDataVar->id == $employeeDataVar->employee_package)
+                                                    @if($packageDataVar->salary_package_id == $employeeDataVar->employee_package)
                                                         {{--                                                    get all packages data--}}
                                                         <span>{{$packageDataVar->package_amount}}</span>
                                                         <input type="hidden" name="amount_received"
@@ -193,7 +193,7 @@
                                                     @csrf
                                                     <input name="belong_to_gym" hidden>
 
-                                                    <input name="employee_id" value="{{$employeeDataVar->id}}" hidden>
+                                                    <input name="employee_id" value="{{$employeeDataVar->employee_id}}" hidden>
                                                     <input name="employee_name"
                                                            value="{{$employeeDataVar->employee_name}}"
                                                            hidden>
@@ -229,7 +229,7 @@
                                                 <form method="post"
                                                       action="{{route('salaryHistory')}}">
                                                     @csrf
-                                                    <input name="employee_id" value="{{$employeeDataVar->id}}"
+                                                    <input name="employee_id" value="{{$employeeDataVar->employee_id}}"
                                                            hidden>
                                                     <button type="submit" class="btn btn-success">Salary History
                                                     </button>

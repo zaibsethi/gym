@@ -18,9 +18,10 @@ class CreateMessagesTable extends Migration
             $table->string('send_to');
             $table->string('schedule_period');
             $table->longText('text_message');
-            $table->string('message_url')->nullable();
-            $table->longText('message_caption')->nullable();
-            $table->string('belong_to_gym');
+//            $table->string('message_url')->nullable();
+//            $table->longText('message_caption')->nullable();
+            $table->string('belong_to_gym')->nullable();
+            $table->string('success_response')->nullable();
             $table->timestamps();
         });
     }

@@ -10,7 +10,7 @@
 
 @section('content')
 
-    <form method="post" action="{{route('updateEmployee',['id'=>$employeeDataByID->id])}}" enctype="multipart/form-data"
+    <form method="post" action="{{route('updateEmployee',['id'=>$employeeDataByID->employee_id])}}" enctype="multipart/form-data"
           class="needs-validation"
           autocomplete="off" novalidate>
         @csrf
@@ -38,7 +38,7 @@
             <div class="col-lg-6">
                 <div class="mb-3">
                     <label class="form-label">Employee ID</label>
-                    <input type="text" style="color: #526be2 !important;" value="{{$employeeDataByID->id}}"
+                    <input type="text" style="color: #526be2 !important;" value="{{$employeeDataByID->employee_id}}"
                            class="form-control"
                            disabled>
 
@@ -211,19 +211,17 @@
             <div class="col-lg-6">
                 <div class="mb-3">
                     <label class="form-label">Gym Package</label>
-                    @foreach($getPackageData as $getPackageDataVar)
 
                         <select class="form-select mb-3" name="employee_package" required>
-                            @if($employeeDataByID->employee_package == $getPackageDataVar->id)
                                 <option selected
-                                        value="{{$getPackageDataVar->id}}">{{$getPackageDataVar->package_amount}}</option>
-                            @endif
-                            <option
-                                value="{{$getPackageDataVar->id}}">{{$getPackageDataVar->package_name}}</option>
+                                        value="{{$employeeDataByID->employee_package}}">{{$employeeDataByID->employee_package}}</option>
+                                @foreach($getPackageData as $getPackageDataVar)
+                               <option value="{{$getPackageDataVar->salary_package_id}}">{{$getPackageDataVar->package_name}}</option>
 
+                                @endforeach
 
                         </select>
-                    @endforeach
+
 
                     <div class="valid-feedback">
                         Looks good!

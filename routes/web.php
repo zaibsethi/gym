@@ -99,6 +99,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'backend', 'middleware' => 'au
         Route::get('personal-trainer', [MemberController::class, 'personalTraining'])->name('personalTraining')->middleware('isTrainer');
         // Route to display personal training information (accessible to trainers)
 
+
+
+
     });
 // end: MemberController
 // begin: MemberAttendanceController
@@ -137,7 +140,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'backend', 'middleware' => 'au
         Route::get("edit-employee-package/{id}", [EmployeePackageController::class, 'editEmployeePackage'])->name('editEmployeePackage');
         Route::post("update-employee-package/{id}", [EmployeePackageController::class, 'updateEmployeePackage'])->name('updateEmployeePackage');
     });
-// end : EmployeePackageController
+    // end : EmployeePackageController
     // start : EmployeeController
 
     Route::group(['EmployeeController', 'middleware' => 'isOwner'], function () {
@@ -200,6 +203,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'backend', 'middleware' => 'au
         Route::get('daily-employee-attendance', [ReportsController::class, 'dailyEmployeeAttendance'])->name('dailyEmployeeAttendance');
     });
 // end :  ReportsController
+
+    // start : MessageController
+//    Route::group(['MessageController', 'middleware' => 'isOwner'], function () {
+//
+//        Route::get('add-message', [MessageController::class, 'addMessage'])->name('addMessage')->middleware('isOwner');
+//        Route::post('create-message', [MessageController::class, 'createMessage'])->name('createMessage')->middleware('isOwner');
+//        Route::get('message-list', [MessageController::class, 'messageList'])->name('messageList')->middleware('isOwner');
+//    });
+// end : MessageController
 });
 
 Auth::routes();
@@ -211,7 +223,8 @@ Route::get('no-access', function () {
 
 Route::get('/', function () {
     return view('auth.login');
-});
+})->name('/');
+
 
 
 Route::get('/clear', function () {
@@ -220,9 +233,7 @@ Route::get('/clear', function () {
     Artisan::call('config:clear');
     Artisan::call('config:cache');
     Artisan::call('view:clear');
-
     return "Cleared!";
-
 });
 
 
@@ -251,10 +262,15 @@ Route::get('/clear', function () {
 //});
 // end : MemberThingController
 
-// start : MessageController
-Route::group(['MessageController'], function () {
-    Route::get('add-message', [MessageController::class, 'addMessage'])->name('addMessage')->middleware('isOwner');
-    Route::post('create-message', [MessageController::class, 'createMessage'])->name('createMessage')->middleware('isOwner');
-    Route::get('message-list', [MessageController::class, 'messageList'])->name('messageList')->middleware('isOwner');
-});
 
+
+
+//Route::get('copy', [MemberController::class, 'copyData'])->name('copyData')->middleware('isOwner');
+
+//Route::get('/session', function () {
+//    // Retrieve all session data
+//    $allSessionData = session()->all();
+//
+//    // Dump and Die to inspect the session data
+//    dd($allSessionData);
+//});

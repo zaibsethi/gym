@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <form method="post" action="{{route('updateExpense',['id'=>$expenseData->id])}}" enctype="multipart/form-data"
+    <form method="post" action="{{route('updateExpense',['id'=>$expenseData->expense_id])}}" enctype="multipart/form-data"
           class="needs-validation"
           novalidate autocomplete="off">
         @csrf

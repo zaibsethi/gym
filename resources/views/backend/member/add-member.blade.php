@@ -17,7 +17,7 @@
         <input name="belong_to_gym" hidden>
 
 
-    @if(session()->has('success'))
+        @if(session()->has('success'))
 
             <div class="alert alert-success" role="alert">
                 <strong>Success - </strong> {{session('success')}}
@@ -40,8 +40,9 @@
             <div class="col-lg-6">
                 <div class="mb-3">
                     <label class="form-label">Member ID</label>
-                    {{--                    getting id from db for autoincrement--}}
-                    <input   type="text" style="color: #526be2 !important;" value="{{$id+1}}" class="form-control"
+                    {{--   getting id from db for autoincrement --}}
+                    <input type="text" style="color: #526be2 !important;" name="roll_no" value="{{$id +  1}}"
+                           class="form-control"
                            disabled>
 
                 </div>
@@ -55,7 +56,7 @@
                         <option selected value="">Select Package</option>
                         @foreach($getPackageData as $getPackageDataVar)
                             <option
-                                value="{{$getPackageDataVar->id}}">{{$getPackageDataVar->package_name}}</option>
+                                value="{{$getPackageDataVar->package_id}}">{{$getPackageDataVar->package_name}}</option>
 
                         @endforeach
 
@@ -124,9 +125,9 @@
             <div class="col-lg-6">
                 <label class="form-label">Blood group</label>
 
-                <select class="form-select mb-3" name="member_blood_group" >
+                <select class="form-select mb-3" name="member_blood_group">
                     <option selected value="">Select group</option>
-{{--                    <option value="unknown">Unknown</option>--}}
+                    {{--                    <option value="unknown">Unknown</option>--}}
                     <option value="A+">A+</option>
                     <option value="A-">A-</option>
                     <option value="B+">B+</option>
@@ -221,12 +222,11 @@
 
         function addEndDate() {
             // fee end date will be same to fee start date
-        startDate = document.getElementById("member_fee_start_date").value;
+            startDate = document.getElementById("member_fee_start_date").value;
             // console.log('startDate');
             document.getElementById("member_fee_end_date").value = startDate;
         }
 
     </script>
-
 
 @endsection

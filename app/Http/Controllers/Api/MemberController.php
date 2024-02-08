@@ -7,6 +7,7 @@ use App\Http\Resources\MemberResource;
 use Illuminate\Http\Request;
 use App\Models\Member;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class MemberController extends Controller
 {
@@ -14,12 +15,23 @@ class MemberController extends Controller
 
     public function login(Request $request)
     {
-        $data = $request->validate([
+////        dd('working');
+//        $data = $request->validate([
+//
+//        ]);
+
+        $validator = Validator::make($request->all(),[
             'email' => 'email|required',
             'password' => 'required'
         ]);
 
-        if (!auth()->attempt($data)) {
+        if($validator->fails())
+        {
+            return  response()->json($validator->errors(),400);
+        }
+
+
+        if (auth()->attempt($validator->validated())) {
             return response(['error_message' => 'Incorrect Details.
             Please try again']);
         }

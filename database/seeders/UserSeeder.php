@@ -17,21 +17,13 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'Developer',
+                'name' => 'Jahanzaib Mehdi',
                 'email' => 'developer@gymcms.com',
                 'phone' => '0000',
-                'password' => Hash::make('12345'),
+                'password' => Hash::make('Zaib@dev_23_'),
                 'type' => 'developer',
-
-            ], [
-                'name' => 'zaib',
-                'email' => 'zaib@fzone.com',
-                'password' => Hash::make('12345'),
-                'type' => 'owner',
-                'gym_id' => 1,
-
             ],
-//            [
+////            [
 //                'name' => 'Zaib',
 //                'email' => 'zaib@fitnesszone.com',
 //                'password' => Hash::make('Zaib@3_36'),

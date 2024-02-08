@@ -25,7 +25,7 @@ class EmployeeAttendanceController extends Controller
     public function createEmployeeAttendance(Request $request)
     {
 //        for already marked attendance
-        $allAttendanceData = EmployeeAttendance::all();
+        $allAttendanceData = EmployeeAttendance::where('belong_to_gym', Auth::user()->belong_to_gym)->get();
         $cdate = Carbon::now()->format('Y-m-d');
 
         foreach ($allAttendanceData as $allAttendanceDataVar) {

@@ -20,8 +20,8 @@ class FeeCollectionController extends Controller
 //      member and package get send from db for fee
 //        $memberData = DB::table("members")->select('*')->cursor();
         $memberData = Member::where('belong_to_gym',Auth::user()->belong_to_gym)->get();
-        $packageData = Package::all();
-        $memberAttendance = MemberAttendance::all();
+        $packageData = Package::where('belong_to_gym',Auth::user()->belong_to_gym)->get();
+        $memberAttendance = MemberAttendance::where('belong_to_gym',Auth::user()->belong_to_gym)->get();
         return view('backend.fee-collection.add-feeCollection', compact('memberData', 'packageData', 'memberAttendance'));
     }
 
@@ -36,7 +36,7 @@ class FeeCollectionController extends Controller
         return redirect(route('addFee'))->with('success', 'Fee collected successfully.');
     }
 
-    public function feeHistory(FeeCollection $id, Request $request)
+    public function feeHistory( Request $request)
     {
 
 //get id from request and send specific member fee history

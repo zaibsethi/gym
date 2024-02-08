@@ -34,7 +34,7 @@
                                 @foreach($activeMembers as $activeMemberVar)
                                     <tr>
                                         <td>
-                                            {{$activeMemberVar->id}}
+                                            {{$activeMemberVar->roll_no}}
                                         </td>
                                         <td class="table-user">
                                             {{$activeMemberVar->member_name}}
